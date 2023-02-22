@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { Card } from '@src/components/Card'
 import { SimpleLayout } from '@src/components/SimpleLayout'
 import { formatDate } from '@src/lib/formatDate'
-import { getAllArticles } from '@src/lib/getAllArticles'
+import { getAllArticles } from '@src/lib/getAllContent'
 
 function Article({ article }) {
   return (

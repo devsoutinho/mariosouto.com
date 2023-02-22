@@ -1,4 +1,4 @@
-import Head from 'next/head'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
@@ -9,9 +9,12 @@ import {
   InstagramIcon,
   LinkedInIcon,
   TwitterIcon,
+  YouTubeIcon,
 } from '@src/components/SocialIcons'
 import portraitImage from '@src/images/portrait.jpg'
 import config from "@src/config"
+import { Head } from "@src/infra/Head/Head"
+import { NavLink } from "@src/components/Footer"
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
@@ -38,82 +41,69 @@ function MailIcon(props) {
   )
 }
 
-export default function About() {
+export default function Sobre() {
   return (
     <>
-      <Head>
-        <title>About - Spencer Sharp</title>
-        <meta
-          name="description"
-          content="I’m Spencer Sharp. I live in New York City, where I design the future."
-        />
-      </Head>
+      <Head
+        title={`Sobre - ${config.owner}`}
+        description={`Eu sou Mario Souto, prazer!`}
+      />
+
       <Container className="mt-16 sm:mt-32">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
           <div className="lg:pl-20">
             <div className="max-w-xs px-2.5 lg:max-w-none">
               <Image
-                src={portraitImage}
+                src="/images/about/owner.jpg"
+                width={400}
+                height={400}
                 alt=""
-                sizes="(min-width: 1024px) 32rem, 20rem"
                 className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
               />
             </div>
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              I’m Spencer Sharp. I live in New York City, where I design the
-              future.
+              Eu sou Mario Souto, prazer!
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                I’ve loved making things for as long as I can remember, and
-                wrote my first program when I was 6 years old, just two weeks
-                after my mom brought home the brand new Macintosh LC 550 that I
-                taught myself to type on.
+                Nasci na cidade de São Paulo e atuo como instrutor e desenvolvedor Front End. Sou formado em Análise e Desenvolvimento de Sistemas pela UNIP e técnico em Informática para Internet pela ETEC Parque Belém.
               </p>
               <p>
-                The only thing I loved more than computers as a kid was space.
-                When I was 8, I climbed the 40-foot oak tree at the back of our
-                yard while wearing my older sister’s motorcycle helmet, counted
-                down from three, and jumped — hoping the tree was tall enough
-                that with just a bit of momentum I’d be able to get to orbit.
+                Meu primeiro trabalho foi como “tio de festa infantil”, paralelo a isso comecei realmente no mundo da web criando sites para meus servidores de Tibia quando tinha 11 anos. Hoje com 21 estou oficialmente a 4 anos na área de programação, onde 2 foram na Agência Digital Pulso participando de diversos projetos com foco principal como Front End e volta e meia fazendo um papel mais Full Stack.
               </p>
               <p>
-                I spent the next few summers indoors working on a rocket design,
-                while I recovered from the multiple surgeries it took to fix my
-                badly broken legs. It took nine iterations, but when I was 15 I
-                sent my dad’s Blackberry into orbit and was able to transmit a
-                photo back down to our family computer from space.
+                Sou apaixonado por dar aulas e curti muito fazer isso em meio aos projetos que participei no Grupo Caelum desde criar/manter os sites, webapps, criação de cursos (React, JavaScript Moderno para WebApps e o de Angular) até um compilador/executor de código universal que tinhamos por lá.
               </p>
               <p>
-                Today, I’m the founder of Planetaria, where we’re working on
-                civilian space suits and manned shuttle kits you can assemble at
-                home so that the next generation of kids really <em>can</em>{' '}
-                make it to orbit — from the comfort of their own backyards.
+                Já palestrei em diversos lugares, Front End Week, faculdades, e tenho como minha maior conquista em palestras a que fiz em 2018 quando realizei o sonho de compartilhar meus experimentos com Houdini CSS na BrazilJS em Porto Alegre e <NavLink href="https://twitter.com/DasSurma/status/1034893725317640192">ajudar o time do chrome a resolver 2 bugs em cima da API da spec</NavLink>.
               </p>
             </div>
           </div>
           <div className="lg:pl-20">
             <ul role="list">
-              <SocialLink href={config.social.twitter} icon={TwitterIcon}>
-                Follow on Twitter
+              <SocialLink href={config.social.youtube} icon={YouTubeIcon}>
+                Me segue no YouTube
+              </SocialLink>
+              <SocialLink href={config.social.twitter} icon={TwitterIcon} className="mt-4">
+                Me segue no Twitter
               </SocialLink>
               <SocialLink href={config.social.instagram} icon={InstagramIcon} className="mt-4">
-                Follow on Instagram
+                Me segue no Instagram
               </SocialLink>
               <SocialLink href={config.social.github} icon={GitHubIcon} className="mt-4">
-                Follow on GitHub
+                Me segue no GitHub
               </SocialLink>
               <SocialLink href={config.social.linkedin} icon={LinkedInIcon} className="mt-4">
-                Follow on LinkedIn
+                Me segue no LinkedIn
               </SocialLink>
               <SocialLink
-                href="mailto:spencer@planetaria.tech"
+                href={`mailto:${config.email}`}
                 icon={MailIcon}
                 className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
               >
-                spencer@planetaria.tech
+                {config.email}
               </SocialLink>
             </ul>
           </div>

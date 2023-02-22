@@ -23,6 +23,7 @@ __metadata:
     "@mdx-js/loader": ^2.1.5
     "@mdx-js/react": ^2.1.5
     "@next/mdx": ^13.0.2
+    "@tailwindcss/aspect-ratio": ^0.4.2
     "@tailwindcss/typography": ^0.5.4
     autoprefixer: ^10.4.12
     clsx: ^1.2.1
@@ -413,6 +414,15 @@ __metadata:
   dependencies:
     defer-to-connect: ^1.0.1
   checksum: 4d9158061c5f397c57b4988cde33a163244e4f02df16364f103971957a32886beb104d6180902cbe8b38cb940e234d9f98a4e486200deca621923f62f50a06fe
+  languageName: node
+  linkType: hard
+
+"@tailwindcss/aspect-ratio@npm:^0.4.2":
+  version: 0.4.2
+  resolution: "@tailwindcss/aspect-ratio@npm:0.4.2"
+  peerDependencies:
+    tailwindcss: ">=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1"
+  checksum: e998fcb0c1a55cae4e83c4510fed0d4d1cba845b7ed79a18451f55377d4a177050c2401af59222662a216aa9c407ef49c475c93db8e13246e0bb3f1ed42f78f8
   languageName: node
   linkType: hard
 

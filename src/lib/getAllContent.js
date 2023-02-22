@@ -5,6 +5,9 @@ async function importArticle(articleFilename) {
   let { meta, default: component } = await import(
     `../pages/articles/${articleFilename}`
   )
+
+  console.log(meta);
+
   return {
     slug: articleFilename.replace(/(\/index)?\.mdx$/, ''),
     ...meta,

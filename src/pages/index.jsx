@@ -1,3 +1,4 @@
+import React from "react"; 
 import config from "@src/config.js";
 import Image from 'next/image'
 import Link from 'next/link'
@@ -24,7 +25,7 @@ import image4 from '@src/images/photos/image-4.jpg'
 import image5 from '@src/images/photos/image-5.jpg'
 import { formatDate } from '@src/lib/formatDate'
 import { generateRssFeed } from '@src/lib/generateRssFeed'
-import { getAllArticles } from '@src/lib/getAllArticles'
+import { getAllArticles } from '@src/lib/getAllContent'
 import { NavLink } from "@src/components/Footer";
 import { Head } from "@src/infra/Head/Head";
 
@@ -111,10 +112,18 @@ function SocialLink({ icon: Icon, ...props }) {
 }
 
 function Newsletter() {
+  const [emailTouched, setEmailTouched] = React.useState(false);
+  const [email, setEmail] = React.useState("");
+
+  const isValidEmail = email.length > 0 && email.indexOf("@") > -1;
+
   return (
     <form
-      action="/thank-you"
       className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
+      action="https://mariosouto.us8.list-manage.com/subscribe/post?u=8225f161ef3ee7a744fd4a2ba&id=2e2754236e"
+      method="post"
+      id="mc-embedded-subscribe-form"
+      name="mc-embedded-subscribe-form"
     >
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <MailIcon className="h-6 w-6 flex-none" />
@@ -126,13 +135,29 @@ function Newsletter() {
       <div className="mt-6 flex">
         <input
           type="email"
-          placeholder="Email address"
-          aria-label="Email address"
+          placeholder="pessoa@provedor.com"
+          aria-label="Endereço de e-mail"
           required
           className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-primary-x500 focus:outline-none focus:ring-4 focus:ring-primary-x500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-primary-x400 dark:focus:ring-primary-x400/10 sm:text-sm"
+          name="EMAIL"
+          id="mce-EMAIL"
+          value={email}
+          onChange={(e) => setEmail(e.target.value.trim().replaceAll(" ", ""))}
+          onBlur={() => setEmailTouched(true)}
         />
-        <Button type="submit" className="ml-4 flex-none">
-          Join
+          {/* <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups--> */}
+          <div
+            style={{ position: "absolute", left: "-5000px" }}
+            aria-hidden="true"
+          >
+            <input
+              type="text"
+              name="b_8225f161ef3ee7a744fd4a2ba_2e2754236e"
+              tabIndex={-1}
+            />
+          </div>
+        <Button type="submit" id="mc-embedded-subscribe" className="ml-4 flex-none">
+          Entrar
         </Button>
       </div>
     </form>
@@ -262,6 +287,7 @@ export default function Home({ articles }) {
             {config.title}
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+            Eu acredito na web e trabalho para viver uma sempre melhor. Sou{' '}
             <NavLink href="https://developers.google.com/community/experts/directory/profile/profile-mario-souto-silva?hl=pt-br" target="_blank">
               Google Developer Expert (Web Technologies)
             </NavLink>, <NavLink href="https://github.com/omariosouto" target="_blank">
