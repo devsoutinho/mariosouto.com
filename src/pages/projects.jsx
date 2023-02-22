@@ -3,6 +3,7 @@
 
 // import { Card } from '@src/components/Card'
 import { SimpleLayout } from '@src/components/SimpleLayout'
+import config from "@src/config"
 // import logoAnimaginary from '@src/images/logos/animaginary.svg'
 // import logoCosmos from '@src/images/logos/cosmos.svg'
 // import logoHelioStream from '@src/images/logos/helio-stream.svg'
@@ -62,7 +63,7 @@ import { SimpleLayout } from '@src/components/SimpleLayout'
 //   return (
 //     <>
 //       <Head>
-//         <title>Projects - Spencer Sharp</title>
+//         <title>Projects - {config.owner}</title>
 //         <meta
 //           name="description"
 //           content="Things I’ve made trying to put my dent in the universe."

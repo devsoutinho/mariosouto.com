@@ -1,9 +1,9 @@
-import Head from 'next/head';
-
 import { Card } from '@src/components/Card';
 import { Section } from '@src/components/Section';
 import { SimpleLayout } from '@src/components/SimpleLayout';
 import { formatDate } from '@src/lib/formatDate';
+import config from "@src/config";
+import { Head } from "@src/infra/Head/Head";
 
 const conferences = [
   {
@@ -44,13 +44,11 @@ export default function Speaking() {
 
   return (
     <>
-      <Head>
-        <title>Speaking - Spencer Sharp</title>
-        <meta
-          name="description"
-          content={description}
-        />
-      </Head>
+      <Head
+        title={`Apresentações - ${config.owner}`}
+        description={description}
+      />
+
       <SimpleLayout
         title={description}
         intro="Uma das minhas maneiras favoritas de compartilhar minhas ideias é ao vivo no palco, onde tem ali pessoas assistindo, as reações individuais... e adoro entrevistas em podcast porque me dão a oportunidade de responder a perguntas em vez de apenas apresentar minhas opiniões."
@@ -59,6 +57,7 @@ export default function Speaking() {
           <SpeakingSection title="Eventos">
             {contents.filter((content) => content.category === "conference").map((conference) => (
               <Appearance
+                key={conference.url}
                 href={conference.url}
                 title={conference.title}
                 description={conference.description}
@@ -70,6 +69,7 @@ export default function Speaking() {
           <SpeakingSection title="Podcasts">
             {contents.filter((content) => content.category === "podcast").map((podcast) => (
               <Appearance
+                key={podcast.url}
                 href={podcast.url}
                 title={podcast.title}
                 description={podcast.description}

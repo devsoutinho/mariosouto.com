@@ -42,7 +42,7 @@ export function Footer() {
                 <NavLink underline={false} href="/sobre">Sobre</NavLink>
                 <NavLink underline={false} href="/projects">Projetos</NavLink>
                 <NavLink underline={false} href="/apresentacoes">Apresentações</NavLink>
-                <NavLink underline={false} href="/uses">Gadgets</NavLink>
+                <NavLink underline={false} href="/setup">Setup</NavLink>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
                 &copy; {new Date().getFullYear()} {config.owner}. Todos os direitos reservados.

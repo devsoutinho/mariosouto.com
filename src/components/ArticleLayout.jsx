@@ -1,9 +1,10 @@
-import Head from 'next/head'
+
 import { useRouter } from 'next/router'
 
 import { Container } from '@src/components/Container'
 import { Prose } from '@src/components/Prose'
 import { formatDate } from '@src/lib/formatDate'
+import config from "@src/config"
 
 function ArrowLeftIcon(props) {
   return (
@@ -32,10 +33,11 @@ export function ArticleLayout({
 
   return (
     <>
-      <Head>
-        <title>{`${meta.title} - Spencer Sharp`}</title>
-        <meta name="description" content={meta.description} />
-      </Head>
+      <Head 
+        title={`${meta.title} - ${config.owner}`}
+        description={meta.description}
+      />
+
       <Container className="mt-16 lg:mt-32">
         <div className="xl:relative">
           <div className="mx-auto max-w-2xl">

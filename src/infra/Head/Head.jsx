@@ -6,6 +6,7 @@ export function Head({ title, description, children }) {
 
   return (
     <NextHead>
+      <title>{title}</title>
       {/* SEO Stuff */}
       <meta name="title" content={title} />
       <meta name="description" content={description} />

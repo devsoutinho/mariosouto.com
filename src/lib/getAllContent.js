@@ -6,8 +6,6 @@ async function importArticle(articleFilename) {
     `../pages/articles/${articleFilename}`
   )
 
-  console.log(meta);
-
   return {
     slug: articleFilename.replace(/(\/index)?\.mdx$/, ''),
     ...meta,

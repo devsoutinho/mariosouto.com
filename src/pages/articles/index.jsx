@@ -1,7 +1,7 @@
-import Head from 'next/head'
-
 import { Card } from '@src/components/Card'
 import { SimpleLayout } from '@src/components/SimpleLayout'
+import config from "@src/config"
+import { Head } from "@src/infra/Head/Head"
 import { formatDate } from '@src/lib/formatDate'
 import { getAllArticles } from '@src/lib/getAllContent'
 
@@ -35,18 +35,18 @@ function Article({ article }) {
 }
 
 export default function ArticlesIndex({ articles }) {
+  const title = "Escrevendo software, resolvendo problemas e gerando alguns bugs no caminho.";
+  const description = "Aqui você vai encontrar em formato de artigos e vídeos alguns dos meus pensamentos sobre tecnologia, programação e desenvolvimento de software.";
+
   return (
     <>
-      <Head>
-        <title>Articles - Spencer Sharp</title>
-        <meta
-          name="description"
-          content="All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order."
-        />
-      </Head>
+      <Head
+        title={`Artigos - ${config.owner}`}
+        description={description}
+      />
       <SimpleLayout
-        title="Writing on software design, company building, and the aerospace industry."
-        intro="All of my long-form thoughts on programming, leadership, product design, and more, collected in chronological order."
+        title={title}
+        intro={description}
       >
         <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
           <div className="flex max-w-3xl flex-col space-y-16">
