@@ -1,8 +1,8 @@
 import Head from 'next/head'
 
-import { Card } from '@/components/Card'
-import { Section } from '@/components/Section'
-import { SimpleLayout } from '@/components/SimpleLayout'
+import { Card } from '@src/components/Card'
+import { Section } from '@src/components/Section'
+import { SimpleLayout } from '@src/components/SimpleLayout'
 
 function ToolsSection({ children, ...props }) {
   return (

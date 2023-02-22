@@ -9,6 +9,10 @@ const nextConfig = {
   experimental: {
     scrollRestoration: true,
   },
+  // add image provider on nextjs
+  images: {
+    domains: ['github.com'],
+  },
 }
 
 const withMDX = nextMDX({

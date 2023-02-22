@@ -1,12 +1,13 @@
 import Link from 'next/link'
+import config from "@src/config.js"
 
-import { Container } from '@/components/Container'
+import { Container } from '@src/components/Container'
 
-function NavLink({ href, children }) {
+export function NavLink({ href, children }) {
   return (
     <Link
       href={href}
-      className="transition hover:text-teal-500 dark:hover:text-teal-400"
+      className="transition hover:text-primary-x500 dark:hover:text-primary-x400"
     >
       {children}
     </Link>
@@ -21,14 +22,13 @@ export function Footer() {
           <Container.Inner>
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
               <div className="flex gap-6 text-sm font-medium text-zinc-800 dark:text-zinc-200">
-                <NavLink href="/about">About</NavLink>
-                <NavLink href="/projects">Projects</NavLink>
-                <NavLink href="/speaking">Speaking</NavLink>
-                <NavLink href="/uses">Uses</NavLink>
+                <NavLink href="/about">Sobre</NavLink>
+                <NavLink href="/projects">Projetos</NavLink>
+                <NavLink href="/speaking">Apresentações</NavLink>
+                <NavLink href="/uses">Gadgets</NavLink>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
-                &copy; {new Date().getFullYear()} Spencer Sharp. All rights
-                reserved.
+                &copy; {new Date().getFullYear()} {config.owner}. Todos os direitos reservados.
               </p>
             </div>
           </Container.Inner>

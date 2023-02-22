@@ -3,23 +3,24 @@ import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
 
-import { Container } from '@/components/Container'
+import { Container } from '@src/components/Container'
 import {
   GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
   TwitterIcon,
-} from '@/components/SocialIcons'
-import portraitImage from '@/images/portrait.jpg'
+} from '@src/components/SocialIcons'
+import portraitImage from '@src/images/portrait.jpg'
+import config from "@src/config"
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
     <li className={clsx(className, 'flex')}>
       <Link
         href={href}
-        className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+        className="group flex text-sm font-medium text-zinc-800 transition hover:text-primary-x500 dark:text-zinc-200 dark:hover:text-primary-x500"
       >
-        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
+        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-primary-x500" />
         <span className="ml-4">{children}</span>
       </Link>
     </li>
@@ -95,16 +96,16 @@ export default function About() {
           </div>
           <div className="lg:pl-20">
             <ul role="list">
-              <SocialLink href="#" icon={TwitterIcon}>
+              <SocialLink href={config.social.twitter} icon={TwitterIcon}>
                 Follow on Twitter
               </SocialLink>
-              <SocialLink href="#" icon={InstagramIcon} className="mt-4">
+              <SocialLink href={config.social.instagram} icon={InstagramIcon} className="mt-4">
                 Follow on Instagram
               </SocialLink>
-              <SocialLink href="#" icon={GitHubIcon} className="mt-4">
+              <SocialLink href={config.social.github} icon={GitHubIcon} className="mt-4">
                 Follow on GitHub
               </SocialLink>
-              <SocialLink href="#" icon={LinkedInIcon} className="mt-4">
+              <SocialLink href={config.social.linkedin} icon={LinkedInIcon} className="mt-4">
                 Follow on LinkedIn
               </SocialLink>
               <SocialLink

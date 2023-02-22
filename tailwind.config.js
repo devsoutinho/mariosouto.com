@@ -1,3 +1,7 @@
+const theme = { 
+  colors: require("./theme/defaults/DEFAULT_COLORS"),
+};
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{js,jsx}'],
@@ -18,6 +22,12 @@ module.exports = {
       '7xl': ['4.5rem', { lineHeight: '1' }],
       '8xl': ['6rem', { lineHeight: '1' }],
       '9xl': ['8rem', { lineHeight: '1' }],
+    },
+    extend: {
+      colors: {
+        primary: theme.colors.primary,
+        neutral: theme.colors.neutral,
+      },
     },
     typography: (theme) => ({
       invert: {

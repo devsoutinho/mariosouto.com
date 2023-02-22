@@ -1,9 +1,9 @@
 import Head from 'next/head'
 
-import { Card } from '@/components/Card'
-import { SimpleLayout } from '@/components/SimpleLayout'
-import { formatDate } from '@/lib/formatDate'
-import { getAllArticles } from '@/lib/getAllArticles'
+import { Card } from '@src/components/Card'
+import { SimpleLayout } from '@src/components/SimpleLayout'
+import { formatDate } from '@src/lib/formatDate'
+import { getAllArticles } from '@src/lib/getAllArticles'
 
 function Article({ article }) {
   return (

@@ -1,3 +1,4 @@
+import config from "@src/config.js";
 import { Fragment, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -5,8 +6,7 @@ import { useRouter } from 'next/router'
 import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 
-import { Container } from '@/components/Container'
-import avatarImage from '@/images/avatar.jpg'
+import { Container } from '@src/components/Container';
 
 function CloseIcon(props) {
   return (
@@ -116,16 +116,16 @@ function MobileNavigation(props) {
                 <CloseIcon className="h-6 w-6 text-zinc-500 dark:text-zinc-400" />
               </Popover.Button>
               <h2 className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
-                Navigation
+                Menu
               </h2>
             </div>
             <nav className="mt-6">
               <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-                <MobileNavItem href="/about">About</MobileNavItem>
-                <MobileNavItem href="/articles">Articles</MobileNavItem>
-                <MobileNavItem href="/projects">Projects</MobileNavItem>
-                <MobileNavItem href="/speaking">Speaking</MobileNavItem>
-                <MobileNavItem href="/uses">Uses</MobileNavItem>
+                <MobileNavItem href="/about">Sobre</MobileNavItem>
+                <MobileNavItem href="/articles">Posts</MobileNavItem>
+                <MobileNavItem href="/projects">Projetos</MobileNavItem>
+                <MobileNavItem href="/speaking">Apresentações</MobileNavItem>
+                <MobileNavItem href="/uses">Gadgets</MobileNavItem>
               </ul>
             </nav>
           </Popover.Panel>
@@ -145,13 +145,13 @@ function NavItem({ href, children }) {
         className={clsx(
           'relative block px-3 py-2 transition',
           isActive
-            ? 'text-teal-500 dark:text-teal-400'
-            : 'hover:text-teal-500 dark:hover:text-teal-400'
+            ? 'text-primary-x500 dark:text-primary-x400'
+            : 'hover:text-primary-x500 dark:hover:text-primary-x400'
         )}
       >
         {children}
         {isActive && (
-          <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0" />
+          <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-primary-x500/0 via-primary-x500/40 to-primary-x500/0 dark:from-primary-x400/0 dark:via-primary-x400/40 dark:to-primary-x400/0" />
         )}
       </Link>
     </li>
@@ -162,11 +162,11 @@ function DesktopNavigation(props) {
   return (
     <nav {...props}>
       <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
-        <NavItem href="/about">About</NavItem>
-        <NavItem href="/articles">Articles</NavItem>
-        <NavItem href="/projects">Projects</NavItem>
-        <NavItem href="/speaking">Speaking</NavItem>
-        <NavItem href="/uses">Uses</NavItem>
+        <NavItem href="/about">Sobre</NavItem>
+        <NavItem href="/articles">Posts</NavItem>
+        <NavItem href="/projects">Projetos</NavItem>
+        <NavItem href="/speaking">Apresentações</NavItem>
+        <NavItem href="/uses">Gadgets</NavItem>
       </ul>
     </nav>
   )
@@ -201,8 +201,8 @@ function ModeToggle() {
       className="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
       onClick={toggleMode}
     >
-      <SunIcon className="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-teal-50 [@media(prefers-color-scheme:dark)]:stroke-teal-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-teal-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-teal-600" />
-      <MoonIcon className="hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400 [@media_not_(prefers-color-scheme:dark)]:fill-teal-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-teal-500" />
+      <SunIcon className="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-primary-x50 [@media(prefers-color-scheme:dark)]:stroke-primary-x500 [@media(prefers-color-scheme:dark)]:group-hover:fill-primary-x50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-primary-x600" />
+      <MoonIcon className="hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400 [@media_not_(prefers-color-scheme:dark)]:fill-primary-x400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-primary-x500" />
     </button>
   )
 }
@@ -234,8 +234,10 @@ function Avatar({ large = false, className, ...props }) {
       {...props}
     >
       <Image
-        src={avatarImage}
+        src={config.avatar}
         alt=""
+        width={large ? 64 : 36}
+        height={large ? 64 : 36}
         sizes={large ? '4rem' : '2.25rem'}
         className={clsx(
           'rounded-full bg-zinc-100 object-cover dark:bg-zinc-800',

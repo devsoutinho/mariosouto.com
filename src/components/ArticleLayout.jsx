@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
-import { Container } from '@/components/Container'
-import { Prose } from '@/components/Prose'
-import { formatDate } from '@/lib/formatDate'
+import { Container } from '@src/components/Container'
+import { Prose } from '@src/components/Prose'
+import { formatDate } from '@src/lib/formatDate'
 
 function ArrowLeftIcon(props) {
   return (
