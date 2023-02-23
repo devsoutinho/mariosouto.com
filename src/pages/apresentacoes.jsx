@@ -4,42 +4,17 @@ import { SimpleLayout } from '@src/components/SimpleLayout';
 import { formatDate } from '@src/lib/formatDate';
 import config from "@src/config";
 import { Head } from "@src/infra/Head/Head";
+import { getCMSData } from "@src/_data/getCMSData"
 
-const conferences = [
-  {
-    url: "https://www.alura.com.br/artigos/dev-leaders-conference",
-    author: "",
-    date: "2022-10-24",
-    slug: "",
-    title: "O que vem depois do Sênior na Carreira Dev?",
-    description: "A palestra aborda o que vem depois do cargo de Sênior na carreira de desenvolvimento de software, e como se preparar para isso.",
-    source: "Dev Leaders Conference",
-    category: "conference",
-    tags: ["carreira", "desenvolvimento"],
+export async function getStaticProps() {
+  return {
+    props: {
+      contents: getCMSData(),
+    },
   }
-];
+}
 
-const podcasts = [
-  {
-    url: "https://jovemnerd.com.br/nerdcast/nerdtech/chat-gpt-a-revolucao-em-forma-de-texto/",
-    author: "",
-    date: "2023-02-03",
-    slug: "",
-    title: "Chat GPT: a revolução em forma de texto",
-    description: "Vamos falar da evolução do machine learning e como isso está mudando o nosso dia a dia, a partir de avanços como os da OpenAI com o ChatGPT.",
-    source: "Nerdcast",
-    category: "podcast",
-    tags: ["machine learning", "chatbot"],
-  }
-];
-
-const contents = [
-  ...podcasts,
-  ...conferences,
-];
-
-
-export default function Speaking() {
+export default function Speaking({ contents }) {
   const description = "Já palestrei em diversos eventos, e amo participar de podcasts";
 
   return (
@@ -61,7 +36,7 @@ export default function Speaking() {
                 href={conference.url}
                 title={conference.title}
                 description={conference.description}
-                event={`${conference.source}, ${formatDate(conference.date)}`}
+                event={`${conference.sourceTitle}, ${formatDate(conference.date)}`}
                 cta="Ver mais sobre"
               />
             ))}
@@ -73,7 +48,7 @@ export default function Speaking() {
                 href={podcast.url}
                 title={podcast.title}
                 description={podcast.description}
-                event={`${podcast.source}, ${formatDate(podcast.date)}`}
+                event={`${podcast.sourceTitle}, ${formatDate(podcast.date)}`}
                 cta="Ouvir o podcast"
               />
             ))}
