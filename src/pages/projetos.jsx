@@ -31,9 +31,12 @@ export default function Projects({ contents }) {
         <div className="space-y-20">
           <div>
             <h2
+              id="cursos"
               className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100"
             >
-              Cursos
+              <a href="#cursos">
+                Cursos
+              </a>
             </h2>
             <ul
               role="list"
@@ -66,9 +69,52 @@ export default function Projects({ contents }) {
           </div>
           <div>
             <h2
+              id="challenges"
               className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100"
             >
-              Projetos
+              <a
+                href="#challenges"
+              >
+                Challenges/Desafios
+              </a>
+            </h2>
+            <ul
+              role="list"
+              className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 mt-10"
+            >
+              {contents.filter((content) => content.source === "challenges").map((content) => (
+                <Card as="li" key={content.slug}>
+                  <div className="relative z-10 flex h-32 w-32 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                    <Image
+                      src={content.image}
+                      alt={`Logo de ${content.title}`}
+                      width={112}
+                      height={112}
+                      className="h-28 w-28 rounded-full"
+                      unoptimized
+                      style={{ backgroundColor: "white" }}
+                    />
+                  </div>
+                  <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+                    <Card.Link href={content.url}>{content.title}</Card.Link>
+                  </h2>
+                  <Card.Description>{content.description}</Card.Description>
+                  <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-primary-x500 dark:text-zinc-200">
+                    <LinkIcon className="h-6 w-6 flex-none" />
+                    <span className="ml-2">Quero praticar</span>
+                  </p>
+                </Card>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h2
+              id="projetos"
+              className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100"
+            >
+              <a href="#projetos">
+                Projetos
+              </a>
             </h2>
             <ul
               role="list"

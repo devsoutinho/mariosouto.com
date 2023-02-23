@@ -2,6 +2,26 @@ import { createPost } from "../infra/createPost";
 
 export const projects = [
   createPost({
+    title: "#001 - CSS Preview Border Radius",
+    url: "https://mariosouto.com/challenges/001-css-preview-border-radius",
+    image: "/images/challenges/001.png",
+    date: "2022-09-20",
+    description: "Projeto básico para quem quer praticar DOM, HTML, CSS e JavaScript.",
+    source: "Challenges",
+    category: "Iniciante",
+    tags: [],
+  }),
+  createPost({
+    title: "#002 - Desenho com CSS: Bandeiras",
+    url: "https://mariosouto.com/challenges/002-css-flags-css",
+    image: "/images/challenges/002.png",
+    date: "2022-09-20",
+    description: "Será que você sabe CSS o suficiente para fazer bandeiras inteiras com 1 tag e CSS?",
+    source: "Challenges",
+    category: "Iniciante",
+    tags: [],
+  }),
+  createPost({
     title: "Como criar um jogo com JavaScript?",
     url: "https://www.youtube.com/watch?v=jOAU81jdi-c&list=PLTcmLKdIkOWmeNferJ292VYKBXydGeDej&index=2",
     image: "/images/courses/flappy-bird-logo.png",
