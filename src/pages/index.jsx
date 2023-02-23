@@ -288,7 +288,7 @@ export default function Home({ articles }) {
             {config.title}
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            Eu acredito na web e trabalho para viver uma sempre melhor. Sou{' '}
+            Eu me chamo Mario Souto, acredito na web como plataforma e trabalho para viver uma sempre melhor. Sou{' '}
             <NavLink href="https://developers.google.com/community/experts/directory/profile/profile-mario-souto-silva?hl=pt-br" target="_blank">
               Google Developer Expert (Web Technologies)
             </NavLink>, <NavLink href="https://github.com/omariosouto" target="_blank">
