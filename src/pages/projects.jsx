@@ -4,6 +4,7 @@
 // import { Card } from '@src/components/Card'
 import { SimpleLayout } from '@src/components/SimpleLayout'
 import config from "@src/config"
+import { Head } from "@src/infra/Head/Head"
 // import logoAnimaginary from '@src/images/logos/animaginary.svg'
 // import logoCosmos from '@src/images/logos/cosmos.svg'
 // import logoHelioStream from '@src/images/logos/helio-stream.svg'
@@ -104,10 +105,18 @@ import config from "@src/config"
 // }
 
 export default function Projects() {
+  const title = 'Coisas que eu fiz tentando deixar minha marca no universo.';
+  const description = 'Essa parte eu to atualizando, mas prometo que trago em breve. Antes de 15/03/2023';
   return (
-    <SimpleLayout
-      title="Coisas que eu fiz tentando deixar minha marca no universo."
-      intro="Essa parte eu to atualizando, mas prometo que trago em breve. Antes de 15/03/2023"
+    <>
+    <Head
+      title={`Projetos - ${config.owner}`}
+      description={description}
     />
+      <SimpleLayout
+        title={title}
+        intro={description}
+      />
+    </>
   )
 }
