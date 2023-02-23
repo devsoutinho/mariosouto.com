@@ -7,6 +7,7 @@ import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 
 import { Container } from '@src/components/Container';
+import { useDarkModeControl } from "@src/infra/DarkModeControl/DarkModeControl";
 
 function CloseIcon(props) {
   return (
@@ -173,6 +174,7 @@ function DesktopNavigation(props) {
 }
 
 function ModeToggle() {
+  const darkModeControl = useDarkModeControl();
   function disableTransitionsTemporarily() {
     document.documentElement.classList.add('[&_*]:!transition-none')
     window.setTimeout(() => {
@@ -188,8 +190,10 @@ function ModeToggle() {
     let isDarkMode = document.documentElement.classList.toggle('dark')
 
     if (isDarkMode === isSystemDarkMode) {
+      darkModeControl.toggleDarkMode();
       delete window.localStorage.isDarkMode
     } else {
+      darkModeControl.toggleDarkMode();
       window.localStorage.isDarkMode = isDarkMode
     }
   }

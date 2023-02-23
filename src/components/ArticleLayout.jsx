@@ -1,4 +1,5 @@
 
+import React from "react"
 import { useRouter } from 'next/router'
 
 import { Container } from '@src/components/Container'
@@ -6,6 +7,7 @@ import { Prose } from '@src/components/Prose'
 import { formatDate } from '@src/lib/formatDate'
 import config from "@src/config"
 import { Head } from "@src/infra/Head/Head"
+import { Comments } from "./Comments"
 
 function ArrowLeftIcon(props) {
   return (
@@ -27,14 +29,12 @@ export function ArticleLayout({
   previousPathname,
 }) {
   let router = useRouter()
-
-  if (isRssFeed) {
-    return children
-  }
+  
+  if (isRssFeed) return children
 
   return (
     <>
-      <Head 
+      <Head
         title={`${meta.title} - ${config.owner}`}
         description={meta.description}
         image={meta.image}
@@ -70,6 +70,8 @@ export function ArticleLayout({
             </article>
           </div>
         </div>
+
+        {meta.comments && (<Comments slug={meta.slug} />)}
       </Container>
     </>
   )
