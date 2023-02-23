@@ -21,41 +21,85 @@ export default function Projects({ contents }) {
   return (
     <>
       <Head
-        title={`Projetos - ${config.owner}`}
+        title={`Cursos e Projetos - ${config.owner}`}
         description={description}
       />
       <SimpleLayout
         title={title}
         intro={description}
       >
-        <ul
-          role="list"
-          className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
-        >
-          {contents.filter((content) => content.source === "projetos").map((content) => (
-            <Card as="li" key={content.slug}>
-              <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                <Image
-                  src={content.image}
-                  alt={`Logo de ${content.title}`}
-                  width={32}
-                  height={32}
-                  className="h-8 w-8 rounded-full"
-                  unoptimized
-                  style={{ backgroundColor: "white" }}
-                />
-              </div>
-              <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                <Card.Link href={content.url}>{content.title}</Card.Link>
-              </h2>
-              <Card.Description>{content.description}</Card.Description>
-              <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-primary-x500 dark:text-zinc-200">
-                <LinkIcon className="h-6 w-6 flex-none" />
-                <span className="ml-2">{content.url.split("//")[1]}</span>
-              </p>
-            </Card>
-          ))}
-        </ul>
+        <div className="space-y-20">
+          <div>
+            <h2
+              className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100"
+            >
+              Cursos
+            </h2>
+            <ul
+              role="list"
+              className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 mt-9"
+            >
+              {contents.filter((content) => content.source === "cursos").map((content) => (
+                <Card as="li" key={content.slug}>
+                  <div className="relative z-10 flex h-32 w-32 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                    <Image
+                      src={content.image}
+                      alt={`Logo de ${content.title}`}
+                      width={112}
+                      height={112}
+                      className="h-28 w-28 rounded-full"
+                      unoptimized
+                      style={{ backgroundColor: "white" }}
+                    />
+                  </div>
+                  <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+                    <Card.Link href={content.url}>{content.title}</Card.Link>
+                  </h2>
+                  <Card.Description>{content.description}</Card.Description>
+                  <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-primary-x500 dark:text-zinc-200">
+                    <LinkIcon className="h-6 w-6 flex-none" />
+                    <span className="ml-2">Ver mais</span>
+                  </p>
+                </Card>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h2
+              className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100"
+            >
+              Projetos
+            </h2>
+            <ul
+              role="list"
+              className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 mt-9"
+            >
+              {contents.filter((content) => content.source === "projetos").map((content) => (
+                <Card as="li" key={content.slug}>
+                  <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+                    <Image
+                      src={content.image}
+                      alt={`Logo de ${content.title}`}
+                      width={32}
+                      height={32}
+                      className="h-8 w-8 rounded-full"
+                      unoptimized
+                      style={{ backgroundColor: "white" }}
+                    />
+                  </div>
+                  <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+                    <Card.Link href={content.url}>{content.title}</Card.Link>
+                  </h2>
+                  <Card.Description>{content.description}</Card.Description>
+                  <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-primary-x500 dark:text-zinc-200">
+                    <LinkIcon className="h-6 w-6 flex-none" />
+                    <span className="ml-2">{content.url.split("//")[1]}</span>
+                  </p>
+                </Card>
+              ))}
+            </ul>
+          </div>
+        </div>
       </SimpleLayout>
     </>
   )

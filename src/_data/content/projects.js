@@ -2,6 +2,26 @@ import { createPost } from "../infra/createPost";
 
 export const projects = [
   createPost({
+    title: "Como criar um jogo com JavaScript?",
+    url: "https://www.youtube.com/watch?v=jOAU81jdi-c&list=PLTcmLKdIkOWmeNferJ292VYKBXydGeDej&index=2",
+    image: "/images/courses/flappy-bird-logo.png",
+    date: "2022-09-20",
+    description: "Já parou pra pensar como é fazer um jogo do ZERO, sem nenhuma engine? Nesse curso você vai aprender a criar um jogo do zero com JavaScript e HTML5.",
+    source: "Cursos",
+    category: "Iniciante",
+    tags: [],
+  }),
+  createPost({
+    title: "Git e GitHub para sobreviência",
+    url: "https://www.youtube.com/watch?v=BAmvmaKQklQ&list=PLh2Y_pKOa4Uf-cUQOVNGlz_GVHx8QYoE6&index=2",
+    image: "/images/courses/github-para-sobrevivencia-logo.png",
+    date: "2022-09-20",
+    description: "Já parou pra pensar como é fazer um jogo do ZERO, sem nenhuma engine? Nesse curso você vai aprender a criar um jogo do zero com JavaScript e HTML5.",
+    source: "Cursos",
+    category: "Iniciante",
+    tags: [],
+  }),
+  createPost({
     title: "DevSoutinho",
     url: "https://youtube.com/@DevSoutinho",
     image: "/images/projects/devsoutinho-logo.png",
