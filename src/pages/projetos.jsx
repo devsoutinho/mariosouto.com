@@ -37,7 +37,7 @@ export default function Projects({ contents }) {
             </h2>
             <ul
               role="list"
-              className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 mt-9"
+              className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 mt-10"
             >
               {contents.filter((content) => content.source === "cursos").map((content) => (
                 <Card as="li" key={content.slug}>
@@ -72,7 +72,7 @@ export default function Projects({ contents }) {
             </h2>
             <ul
               role="list"
-              className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 mt-9"
+              className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 mt-10"
             >
               {contents.filter((content) => content.source === "projetos").map((content) => (
                 <Card as="li" key={content.slug}>
