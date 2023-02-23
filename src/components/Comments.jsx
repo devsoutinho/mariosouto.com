@@ -48,7 +48,7 @@ export const Comments = ({ slug }) => {
         }, 50);
       }
     }
-  }, [darkModeControl.isDarkMode]);
+  }, [darkModeControl.isDarkMode, slug]);
 
   return <div>
     <div ref={ref} />
