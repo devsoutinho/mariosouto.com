@@ -347,9 +347,9 @@ export default function Home({ articles }) {
 }
 
 export async function getStaticProps() {
-  await generateSitemap();
   if (process.env.NODE_ENV === 'production') {
-    await generateRssFeed()
+    await generateSitemap();
+    await generateRssFeed();
   }
 
   return {
