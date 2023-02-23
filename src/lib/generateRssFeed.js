@@ -19,7 +19,7 @@ export async function generateRssFeed() {
     author,
     id: siteUrl,
     link: siteUrl,
-    image: `${siteUrl}/favicon/favicon.ico`,
+    image: `${siteUrl}/favicon/favicon.png`,
     favicon: `${siteUrl}/favicon/favicon.ico`,
     copyright: `All rights reserved ${new Date().getFullYear()}`,
     feedLinks: {
