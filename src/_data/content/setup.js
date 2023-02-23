@@ -17,7 +17,7 @@ export const setup = [
     description: "Eu usava Sublime Text, até conhecer o VSCode e não larguei mais. Terminal integrado, autocomplete e o ecossistema de plugins me fez ficar aqui mesmo algumas vezes já tendo pego licença do WebStorm.",
     source: "Setup",
     category: "Development Tools",
-    tags: ["pc", "notebook", "setup", "apple"],
+    tags: [],
   }),
   createPost({
     title: "Figma",
@@ -35,6 +35,6 @@ export const setup = [
     description: "Simplesmente o MELHOR software para tirar screenshots. Ele tem suporte para OCR, edição rápida, e um monte de outras coisas que eu não uso, mas que são muito úteis.",
     source: "Setup",
     category: "Produtividade",
-    tags: ["pc", "notebook", "setup", "apple"],
+    tags: [],
   })
 ];

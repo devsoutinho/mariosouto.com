@@ -15,6 +15,7 @@ import { slugify } from "@src/infra/string/slugify/slugify";
  * @param {{
  *  title: string,
  *  url: string,
+ *  image: string,
  *  author?: string,
  *  slug?: string,
  *  date: string,
@@ -26,6 +27,7 @@ import { slugify } from "@src/infra/string/slugify/slugify";
  * @returns {{
  *  title: string,
  *  url: string,
+ *  image: string,
  *  author: string,
  *  date: string,
  *  slug: string,
@@ -38,6 +40,7 @@ import { slugify } from "@src/infra/string/slugify/slugify";
 */
 export function createPost({
   url,
+  image,
   author,
   date,
   slug,
@@ -49,6 +52,7 @@ export function createPost({
 }) {
   return {
     url,
+    image: image || "",
     author: author || "",
     date,
     slug: slug || slugify(title),
