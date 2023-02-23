@@ -21,6 +21,7 @@ export const Comments = ({ slug }) => {
       src: 'https://utteranc.es/client.js',
       repo: 'devsoutinho/mariosouto.com',
       'issue-term': `comments/${slug}`,
+      label: "comments",
       theme,
       crossOrigin: 'anonymous',
       async: true
