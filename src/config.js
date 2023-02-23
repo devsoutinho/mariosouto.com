@@ -1,4 +1,4 @@
-export default {
+const config = {
   "owner": "Mario Souto",
   "title": "Lead Software Engineer, Creator, Speaker, e curioso.",
   "description": "Eu sou Mario Souto, um engenheiro de software nascido no Brasil em São Paulo. Sou criador do canal DevSoutinho e apaixonado por ensinar.",
@@ -13,3 +13,5 @@ export default {
     "youtube": "https://youtube.com/@DevSoutinho"
   }
 }
+
+export default config;

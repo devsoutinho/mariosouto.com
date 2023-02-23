@@ -5,6 +5,7 @@ import { Container } from '@src/components/Container'
 import { Prose } from '@src/components/Prose'
 import { formatDate } from '@src/lib/formatDate'
 import config from "@src/config"
+import { Head } from "@src/infra/Head/Head"
 
 function ArrowLeftIcon(props) {
   return (
