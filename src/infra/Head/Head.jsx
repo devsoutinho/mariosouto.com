@@ -37,7 +37,6 @@ export function Head({ title, description, children }) {
       <link rel="manifest" href="/favicon/site.webmanifest" />
       <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#f9703e" />
       <meta name="msapplication-TileColor" content="#da532c" />
-      <meta name="theme-color" content="#ffffff"></meta>
       {/* Children */}
       {children}
     </NextHead>
