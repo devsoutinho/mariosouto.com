@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://mariosouto.com/articles/imutabilidade-no-javascript-e-como-ela-faz-programarmos-melhor-na-linguagem-sem-tipagem</loc>
+    <lastmod>2023-02-23T10:26:04.928Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://mariosouto.com/articles/o-que-e-variavel</loc>
+    <lastmod>2023-02-23T10:26:04.928Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>

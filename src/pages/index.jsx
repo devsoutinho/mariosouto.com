@@ -25,6 +25,7 @@ import image4 from '@src/images/photos/image-4.jpg'
 import image5 from '@src/images/photos/image-5.jpg'
 import { formatDate } from '@src/lib/formatDate'
 import { generateRssFeed } from '@src/lib/generateRssFeed'
+import { generateSitemap } from "@src/lib/generateSitemap";
 import { getAllArticles } from '@src/lib/getAllContent'
 import { NavLink } from "@src/components/Footer";
 import { Head } from "@src/infra/Head/Head";
@@ -346,6 +347,7 @@ export default function Home({ articles }) {
 }
 
 export async function getStaticProps() {
+  await generateSitemap();
   if (process.env.NODE_ENV === 'production') {
     await generateRssFeed()
   }
