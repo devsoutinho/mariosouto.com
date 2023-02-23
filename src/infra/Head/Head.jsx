@@ -1,8 +1,8 @@
 import NextHead from "next/head";
 
-export function Head({ title, description, children }) {
+export function Head({ title, description, image, children }) {
   const url = "https://mariosouto.com";
-  const ogImage = "https://mariosouto.com/metadata/og.jpg";
+  const ogImage = image || "https://mariosouto.com/metadata/og.jpg";
 
   return (
     <NextHead>

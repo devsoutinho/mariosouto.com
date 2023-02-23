@@ -37,6 +37,7 @@ export function ArticleLayout({
       <Head 
         title={`${meta.title} - ${config.owner}`}
         description={meta.description}
+        image={meta.image}
       />
 
       <Container className="mt-16 lg:mt-32">
