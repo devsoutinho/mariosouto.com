@@ -2,13 +2,40 @@ import { createPost } from "../infra/createPost";
 
 export const setup = [
   createPost({
-    title: "Macbook Pro 13 polegadas, processador M1, 16gb de RAM",
+    title: "Macbook Pro 13 polegadas, processador M1, 16gb de RAM (Spacegray)",
     url: "https://amzn.to/3m10ee5",
     date: "2021-09-20",
     description: "Eu adorei a máquina, principalmente pela portabilidade e pela bateria que dura o dia todo. NADA a reclamar desse aqui.",
     source: "Setup",
     category: "workstation",
     tags: ["pc", "notebook", "setup", "apple", "afiliado"],
+  }),
+  createPost({
+    title: "Magic Trackpad 3 (Branco)",
+    url: "https://amzn.to/3kvgV0y",
+    date: "2021-09-20",
+    description: "Eu amo o trackpad do Macbook, mas quando eu preciso de mais espaço, eu uso esse aqui. É muito bom pra trabalhar com o Figma, por exemplo e meu pulso fica 0 bala no final de um dia de trabalho.",
+    source: "Setup",
+    category: "workstation",
+    tags: ["trackpad", "mouse", "setup", "apple", "afiliado"],
+  }),
+  createPost({
+    title: "Magic Keyboard com TouchID (Branco)",
+    url: "https://amzn.to/3xO8oJm",
+    date: "2021-09-20",
+    description: "Eu usava um Keychron antes, mas derrubei água nele e acabei mudando pro magic trackpad. TER TOUCH ID NO TECLADO NÃO TEM PREÇO! (Na verdade tem, mas se pegar uma promoção boa ou comprar de fora até da pra pagar chorando menos).",
+    source: "Setup",
+    category: "workstation",
+    tags: ["keyboard", "teclado", "setup", "apple", "afiliado"],
+  }),
+  createPost({
+    title: "Streamdeck - Elgato",
+    url: "https://amzn.to/3Zf3gtl",
+    date: "2021-09-20",
+    description: "Se você faz lives, ou gosta de ter atalhos, isso aqui é sensacional! 100% configurável e com uma interface bem simples de usar. Eu uso pra trocar de câmera, de microfone, de cenas, de música, de tudo!",
+    source: "Setup",
+    category: "workstation",
+    tags: ["keyboard", "shortcuts", "setup", "elgato", "afiliado"],
   }),
   createPost({
     title: "Visual Studio Code",
