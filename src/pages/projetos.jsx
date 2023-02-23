@@ -58,7 +58,7 @@ export default function Projects({ contents }) {
                   <Card.Description>{content.description}</Card.Description>
                   <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-primary-x500 dark:text-zinc-200">
                     <LinkIcon className="h-6 w-6 flex-none" />
-                    <span className="ml-2">Ver mais</span>
+                    <span className="ml-2">Quero aprender</span>
                   </p>
                 </Card>
               ))}
