@@ -75,7 +75,7 @@ export default function Projects({ contents }) {
               <a
                 href="#challenges"
               >
-                Challenges/Desafios
+                #DevSoutinhoChallenges
               </a>
             </h2>
             <ul

@@ -38,6 +38,15 @@ export const setup = [
     tags: ["keyboard", "shortcuts", "setup", "elgato", "afiliado"],
   }),
   createPost({
+    title: "Ipad Mini 6th Gen (Spacegray)",
+    url: "https://amzn.to/3IMZOkn",
+    date: "2021-09-20",
+    description: "Antes eu usava o iPad air 4, mas ele é muito grande pra mim. O mini é perfeito, e eu uso ele pra assistir aulas, pra ler, pra ver séries, pra fazer anotações, pra fazer tudo!",
+    source: "Setup",
+    category: "workstation",
+    tags: ["tablet", "ipad", "setup", "apple", "afiliado"],
+  }),
+  createPost({
     title: "Visual Studio Code",
     url: "https://code.visualstudio.com/",
     date: "2018-09-20",
