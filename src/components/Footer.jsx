@@ -40,8 +40,8 @@ export function Footer() {
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
               <div className="flex flex-wrap justify-center gap-6 text-sm font-medium text-zinc-800 dark:text-zinc-200">
                 <NavLink underline={false} href="/sobre">Sobre</NavLink>
-                <NavLink underline={false} href="/projetos">Projetos</NavLink>
-                <NavLink underline={false} href="/apresentacoes">Apresentações</NavLink>
+                <NavLink underline={false} href="/cursos">Projetos</NavLink>
+                <NavLink underline={false} href="/talks">Talks</NavLink>
                 <NavLink underline={false} href="/setup">Setup</NavLink>
                 <NavLink underline={false} href="/rss/feed.xml">Feed</NavLink>
               </div>

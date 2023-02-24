@@ -20,7 +20,7 @@ export default function Speaking({ contents }) {
   return (
     <>
       <Head
-        title={`Apresentações - ${config.owner}`}
+        title={`Talks - ${config.owner}`}
         description={description}
       />
 
