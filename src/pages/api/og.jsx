@@ -99,7 +99,7 @@ export default async function handler(req) {
                     maxWidth: "75%",
                     color: "rgb(39, 39, 42)",
                     margin: 0,
-                    fontSize: "32px",
+                    fontSize: "38px",
                     fontWeight: "700",
                   }}
                 >
