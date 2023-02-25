@@ -6,6 +6,11 @@ export const redirects = [
     "permanent": true
   },
   {
+    "source": "/discord",
+    "destination": "https://discord.gg/nAsj78tdWc",
+    "permanent": true
+  },
+  {
     "source": "/newsletter",
     "destination": "https://labs.mariosouto.com/newsletter",
     "permanent": false
