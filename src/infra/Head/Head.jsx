@@ -2,37 +2,42 @@ import NextHead from "next/head";
 import { withRouter } from "next/router";
 
 export const Head = withRouter(function Head({ router, title, ogTitle, description, image, children }) {
-  const url = "https://mariosouto.com" + router.route + "/";
+  const routePath = router.route === "/" ? "" : router.route; 
+  const url = "https://mariosouto.com" + routePath;
   const ogImage = image !== undefined 
-    ? `${process.env.NEXT_PUBLIC_SITE_URL}/api/og?bg=${image}`
-    : `${process.env.NEXT_PUBLIC_SITE_URL}/api/og?title=${btoa(ogTitle || title)}`;
+    ? `${process.env.NEXT_PUBLIC_SITE_URL}api/og?bg=${image}`
+    : `${process.env.NEXT_PUBLIC_SITE_URL}api/og?title=${btoa(ogTitle || title)}&path=${routePath}`;
+
+
+  console.log(routePath);
+  console.log("ogImage", ogImage);
 
   return (
     <NextHead>
+      {/* Title */}
       <title>{title}</title>
-      {/* SEO Stuff */}
       <meta name="title" content={title} />
+      <meta property="og:title" content={title} />
+      <meta property="twitter:title" content={title} />
+
       <meta name="description" content={description} />
+      <meta property="og:description" content={description} />
+      <meta property="twitter:description" content={description} />
       
-      {/* Og Image */}
+      {/* URL */}
+      <meta property="og:url" content={url} />
+      <meta property="twitter:url" content={url} />
+
+      {/* Image */}
+      <meta property="twitter:image" content={ogImage} />
+      <meta property="twitter:card" content="summary_large_image" />
       <meta property="og:image" itemProp="image" content={ogImage} />
       <meta property="og:image:width" content="526" />
       <meta property="og:image:height" content="275" />
       <meta property="og:image:type" content="image/jpeg" />
-
-      {/* <!-- Open Graph / Facebook --> */}
       <meta property="og:type" content="website" />
-      <meta property="og:url" content={url} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
       <meta property="og:updated_time" content="1440432930" />
 
-      {/* <!-- Twitter --> */}
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={url} />
-      <meta property="twitter:title" content={title} />
-      <meta property="twitter:description" content={description} />
-      <meta property="twitter:image" content={ogImage} />
       {/* Favicon */}
       <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" /> 
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />

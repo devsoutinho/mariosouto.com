@@ -41,7 +41,8 @@ export default function ArticlesIndex({ articles }) {
   return (
     <>
       <Head
-        title={`Artigos - ${config.owner}`}
+        ogTitle="Artigos, vídeos e postagens de reflexões recentes sobre minha carreira e tecnologia."
+        title={`Posts - ${config.owner}`}
         description={description}
       />
       <SimpleLayout

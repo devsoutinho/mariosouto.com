@@ -20,7 +20,7 @@ export default function Speaking({ contents }) {
   return (
     <>
       <Head
-        ogTitle={"DevSoutinho - Talks"}
+        ogTitle={"Podcasts, participações e palestras"}
         title={`Talks - ${config.owner}`}
         description={description}
       />

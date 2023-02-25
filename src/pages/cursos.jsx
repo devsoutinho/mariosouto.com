@@ -21,7 +21,7 @@ export default function Projects({ contents }) {
   return (
     <>
       <Head
-        ogTitle={"DevSoutinho - Cursos e Projetos"}
+        ogTitle={"Conheça meus cursos e projetos"}
         title={`Cursos e Projetos - ${config.owner}`}
         description={description}
       />

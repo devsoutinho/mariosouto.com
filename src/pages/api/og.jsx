@@ -24,10 +24,9 @@ export default async function handler(req) {
   ]);
 
   try {
-
-
     const image = req.nextUrl.searchParams.get("bg");
     const title = atob(req.nextUrl.searchParams.get("title"));
+    const path = req.nextUrl.searchParams.get("path");
 
     return new ImageResponse(
       (
@@ -138,7 +137,7 @@ export default async function handler(req) {
                       marginBottom: "-3px",
                     }}
                   />
-                  mariosouto.com
+                  mariosouto.com{path}
                 </h2>
               </div>,
             ]
