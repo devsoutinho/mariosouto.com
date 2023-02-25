@@ -24,9 +24,9 @@ export default async function handler(req) {
   ]);
 
   try {
-    const image = req.nextUrl.searchParams.get("bg");
-    const title = atob(req.nextUrl.searchParams.get("title"));
-    const path = req.nextUrl.searchParams.get("path");
+    const image = atob(req.nextUrl.searchParams.get("bg") || "");
+    const title = atob(req.nextUrl.searchParams.get("title") || "");
+    const path = atob(req.nextUrl.searchParams.get("path") || "");
 
     return new ImageResponse(
       (
@@ -53,8 +53,8 @@ export default async function handler(req) {
               style={{
                 display: "flex",
                 position: "absolute",
-                right: "3%",
-                top: "3%",
+                right: "3vw",
+                top: "3vw",
                 backgroundColor: "white",
                 width: "55px",
                 height: "55px",
@@ -117,7 +117,6 @@ export default async function handler(req) {
                   style={{
                     whiteSpace: "pre-line",
                     maxWidth: "70%",
-                    color: "#a1a1aa",
                     margin: 0,
                     fontSize: "20px",
                     fontWeight: "700",
@@ -137,7 +136,26 @@ export default async function handler(req) {
                       marginBottom: "-3px",
                     }}
                   />
-                  mariosouto.com{path}
+                  <div 
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                      justifyContent: "center",
+                      fontSize: "20px",
+                      color: "#B1B1B1",
+                    }}
+                  >
+                    mariosouto.com<br />
+                    <span
+                      style={{
+                        color: "#B1B1B1",
+                        fontSize: path.length > 40 ? "14px" : "16px",
+                      }}
+                    >
+                      {path}
+                    </span>
+                  </div>
                 </h2>
               </div>,
             ]

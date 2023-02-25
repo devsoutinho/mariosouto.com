@@ -5,11 +5,9 @@ export const Head = withRouter(function Head({ router, title, ogTitle, descripti
   const routePath = router.route === "/" ? "" : router.route; 
   const url = "https://mariosouto.com" + routePath;
   const ogImage = image !== undefined 
-    ? `${process.env.NEXT_PUBLIC_SITE_URL}api/og?bg=${image}`
-    : `${process.env.NEXT_PUBLIC_SITE_URL}api/og?title=${btoa(ogTitle || title)}&path=${routePath}`;
+    ? `${process.env.NEXT_PUBLIC_SITE_URL}api/og?bg=${btoa(image)}`
+    : `${process.env.NEXT_PUBLIC_SITE_URL}api/og?title=${btoa(ogTitle || title)}&path=${btoa(routePath)}`;
 
-
-  console.log(routePath);
   console.log("ogImage", ogImage);
 
   return (
