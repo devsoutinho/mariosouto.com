@@ -6,9 +6,6 @@ export function Head({ title, description, image, children, pagePath }) {
     ? `${process.env.NEXT_PUBLIC_SITE_URL}/api/og?bg=${image}`
     : `${process.env.NEXT_PUBLIC_SITE_URL}/api/og?title=${title}&page=${pagePath}`;
 
-
-  console.log("ogImage", ogImage);
-
   return (
     <NextHead>
       <title>{title}</title>
