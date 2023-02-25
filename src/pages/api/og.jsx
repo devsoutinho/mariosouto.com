@@ -5,21 +5,16 @@ export const config = {
 }
 
 const URL = process.env.NEXT_PUBLIC_SITE_URL
-console.log("url", URL);
 
 export default async function handler(req) {
-  const { query } = req;
-
-  console.log("req", Object.keys(req), );
-
   const image = req.nextUrl.searchParams.get("bg");
-  const page = req.nextUrl.searchParams.get("page");
   const title = req.nextUrl.searchParams.get("title");
 
   return new ImageResponse(
     (
       <div
         style={{
+          position: "relative",
           backgroundColor: '#fff',
           backgroundImage: image ? `url(${image})` : `url(${URL}/trademark/thumb-bg.jpg)`,
           backgroundSize: '526px 275px',
@@ -57,7 +52,7 @@ export default async function handler(req) {
             />
           </div>
         ) : (
-          <>
+          [
             <img
               style={{
                 position: "absolute",
@@ -67,7 +62,7 @@ export default async function handler(req) {
               src={`${URL}/trademark/logo-devsoutinho-default.png`}
               alt="DevSoutinho Logo"
               width="80"
-            />
+            />,
             <div
               style={{
                 display: 'flex',
@@ -76,27 +71,20 @@ export default async function handler(req) {
                 marginBottom: "5%",
               }}
             >
-              <h2
-                style={{
-                  margin: 0,
-                  color: "rgb(82, 82, 91)",
-                }}
-              >
-                {page}
-              </h2>
               <h1
                 style={{
+                  maxWidth: "75%",
                   color: "rgb(39, 39, 42)",
                   margin: 0,
                   fontSize: "32px",
-                  fontFamily: "ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji",
+                  fontFamily: "serif",
                   fontWeight: "bold",
                 }}
               >
                 {title}
               </h1>
-            </div>
-          </>
+            </div>,
+          ]
         )
         }
       </div>
