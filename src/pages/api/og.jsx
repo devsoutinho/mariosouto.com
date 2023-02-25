@@ -33,8 +33,8 @@ export default async function handler(req) {
           style={{
             fontFamily: "Roboto",
             position: "relative",
-            backgroundColor: '#fff',
-            backgroundImage: image ? `url(${image})` : `url(${SITE_URL}/trademark/thumb-bg.jpg)`,
+            backgroundColor: '#dddddd',
+            backgroundImage: image ? `url(${image})` : ``,
             backgroundSize: '526px 275px',
             backgroundPosition: 'center',
             height: '100%',
