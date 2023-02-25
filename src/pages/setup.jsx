@@ -22,6 +22,7 @@ export default function Uses({ contents }) {
   return (
     <>
       <Head
+        ogTitle={"DevSoutinho - Setup"}
         title={`Setup - ${config.owner}`}
         description={title}
       />

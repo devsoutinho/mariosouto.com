@@ -279,7 +279,7 @@ export default function Home({ articles }) {
   return (
     <>
       <Head
-        ogTitle={`${config.owner} - Home`}
+        ogTitle={"Mario Souto, site pessoal"}
         title={`${config.owner} - ${config.title}`}
         description={config.description}
       />

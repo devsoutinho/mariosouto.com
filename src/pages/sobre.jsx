@@ -45,6 +45,7 @@ export default function Sobre() {
   return (
     <>
       <Head
+        ogTitle={"DevSoutinho - Sobre"}
         title={`Sobre - ${config.owner}`}
         description={`Eu sou Mario Souto, prazer!`}
       />
