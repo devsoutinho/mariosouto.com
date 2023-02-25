@@ -35,6 +35,7 @@ export function ArticleLayout({
   return (
     <>
       <Head
+        ogTitle={meta.title}
         title={`${meta.title} - ${config.owner}`}
         description={meta.description}
         image={meta.image}
