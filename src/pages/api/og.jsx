@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from '@vercel/og'
 
 export const config = {
@@ -54,6 +55,7 @@ export default async function handler(req) {
         ) : (
           [
             <img
+              key="img"
               style={{
                 position: "absolute",
                 right: "5%",
@@ -64,6 +66,7 @@ export default async function handler(req) {
               width="80"
             />,
             <div
+              key="div"
               style={{
                 display: 'flex',
                 flexDirection: 'column',
