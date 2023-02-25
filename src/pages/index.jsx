@@ -279,7 +279,6 @@ export default function Home({ articles }) {
   return (
     <>
       <Head
-        image="https://mariosouto.com/metadata/og.jpg"
         title={`${config.owner} - ${config.title}`}
         description={config.description}
       />
