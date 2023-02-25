@@ -4,7 +4,6 @@ import glob from 'fast-glob'
 function addPage(page) {
   const path = page.replace('src/pages', '').replace('.js', '').replace('.mdx', '')
   const route = path === '/index' ? '' : path
-  console.log("route", route);
   return `  <url>
     <loc>${`${process.env.NEXT_PUBLIC_SITE_URL}${route}`}</loc>
     <lastmod>${new Date().toISOString()}</lastmod>

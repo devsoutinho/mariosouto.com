@@ -7,8 +7,6 @@ export const Head = withRouter(function Head({ router, title, ogTitle, descripti
     ? `${process.env.NEXT_PUBLIC_SITE_URL}/api/og?bg=${image}`
     : `${process.env.NEXT_PUBLIC_SITE_URL}/api/og?title=${btoa(ogTitle || title)}`;
 
-  console.log(ogImage);
-
   return (
     <NextHead>
       <title>{title}</title>

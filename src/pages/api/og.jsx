@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from '@vercel/og'
 
+const FRAME_PADDING = "6vw";
+
 export const config = {
   runtime: 'experimental-edge',
 }
@@ -33,7 +35,7 @@ export default async function handler(req) {
           style={{
             fontFamily: "Roboto",
             position: "relative",
-            backgroundColor: '#dddddd',
+            backgroundColor: '#18181b',
             backgroundImage: image ? `url(${image})` : ``,
             backgroundSize: '526px 275px',
             backgroundPosition: 'center',
@@ -75,12 +77,12 @@ export default async function handler(req) {
                 key="img"
                 style={{
                   position: "absolute",
-                  right: "5%",
-                  top: "5%",
+                  right: FRAME_PADDING,
+                  top: FRAME_PADDING,
                 }}
-                src={`${SITE_URL}/trademark/logo-devsoutinho-default.png`}
+                src={`${SITE_URL}/trademark/logo-devsoutinho-default-light.png`}
                 alt="DevSoutinho Logo"
-                width="80"
+                width="100"
               />,
               <div
                 key="div"
@@ -88,69 +90,56 @@ export default async function handler(req) {
                   display: 'flex',
                   flex: 1,
                   flexDirection: 'column',
-                  paddingTop: "5%",
-                  marginLeft: "5%",
-                  marginBottom: "5%",
+                  paddingTop: FRAME_PADDING,
+                  marginLeft: FRAME_PADDING,
+                  marginBottom: FRAME_PADDING,
+                  justifyContent: "flex-end",
+                  alignItems: "flex-start",
                 }}
               >
                 <h1
                   style={{
                     whiteSpace: "pre-line",
-                    maxWidth: "75%",
-                    color: "rgb(39, 39, 42)",
+                    maxWidth: "70%",
+                    color: "#f4f4f5",
                     margin: 0,
-                    fontSize: "38px",
+                    fontSize: title.length > 50 ? "28px" : "38px",
                     fontWeight: "700",
+                    display: "flex",
+                    justifyContent: "flex-end",
+                    alignItems: "flex-end",
+                    flex: 1,
+                    marginBottom: "4vw",
                   }}
                 >
                   {title}
                 </h1>
-                <div
+                <h2
                   style={{
-                    display: 'flex',
-                    marginTop: "5%",
-                    width: "100%",
-                    flex: 1,
-                    alignItems: "flex-end",
+                    whiteSpace: "pre-line",
+                    maxWidth: "70%",
+                    color: "#a1a1aa",
+                    margin: 0,
+                    fontSize: "20px",
+                    fontWeight: "700",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
                   }}
                 >
-                  <div
+                  <img
+                    src="https://github.com/omariosouto.png"
+                    width="25px"
+                    height="25px"
                     style={{
-                      display: 'flex',
+                      border: "1px solid #a1a1aa",
+                      borderRadius: "50%",
+                      marginRight: "2vw",
+                      marginBottom: "-3px",
                     }}
-                  >
-                    <img
-                      key="img-profile"
-                      src="https://github.com/omariosouto.png"
-                      style={{
-                        width: "50px",
-                        height: "50px",
-                        borderRadius: "100%",
-                      }}
-                    />
-                  </div>
-                  <div
-                    style={{
-                      display: 'flex',
-                      flexDirection: 'column',
-                      marginLeft: "10px",
-                      justifyContent: 'center',
-                    }}
-                  >
-                    <h2
-                      style={{
-                        whiteSpace: "pre-line",
-                        maxWidth: "75%",
-                        color: "rgb(39, 39, 42)",
-                        margin: 0,
-                        fontSize: "20px",
-                        fontWeight: "400",
-                      }}
-                    >
-                      Mario Souto
-                    </h2>
-                  </div>
-                </div>
+                  />
+                  mariosouto.com
+                </h2>
               </div>,
             ]
           )
@@ -158,6 +147,7 @@ export default async function handler(req) {
         </div>
       ),
       {
+        debug: false,
         width: 526,
         height: 275,
         fonts: [
@@ -177,9 +167,8 @@ export default async function handler(req) {
       }
     )
   } catch (e) {
-    console.log(`${e.message}`);
     return new Response(`Failed to generate the image`, {
-      status: 500,
+      status: 400,
     });
   }
 }

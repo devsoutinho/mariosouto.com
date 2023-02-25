@@ -10,7 +10,6 @@ export const Comments = ({ slug }) => {
     const theme = isDarkModeInLocalStorage 
       ? isDarkModeInLocalStorage === 'true' ? 'github-dark' : 'github-light'
       : "preferred-color-scheme";
-    console.log("theme", theme);
     const scriptId = "utterances-comments";
     const hasCommentsContainer = Boolean(document.body.querySelector(`.utterances-frame`));
     const hasScript = Boolean(document.body.querySelector(`#${scriptId}`));
