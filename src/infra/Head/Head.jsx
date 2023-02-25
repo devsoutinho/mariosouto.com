@@ -5,7 +5,7 @@ export const Head = withRouter(function Head({ router, title, ogTitle, descripti
   const url = "https://mariosouto.com" + router.route + "/";
   const ogImage = image !== undefined 
     ? `${process.env.NEXT_PUBLIC_SITE_URL}/api/og?bg=${image}`
-    : `${process.env.NEXT_PUBLIC_SITE_URL}/api/og?title=${ogTitle || title}`;
+    : `${process.env.NEXT_PUBLIC_SITE_URL}/api/og?title=${btoa(ogTitle || title)}`;
 
   return (
     <NextHead>

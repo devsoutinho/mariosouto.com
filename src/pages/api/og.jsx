@@ -25,7 +25,7 @@ export default async function handler(req) {
 
 
     const image = req.nextUrl.searchParams.get("bg");
-    const title = req.nextUrl.searchParams.get("title");
+    const title = atob(req.nextUrl.searchParams.get("title"));
 
     return new ImageResponse(
       (
