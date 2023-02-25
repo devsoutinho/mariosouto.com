@@ -1,8 +1,10 @@
 import NextHead from "next/head";
 
-export function Head({ title, description, image, children }) {
+export function Head({ title, description, image, children, pagePath }) {
   const url = "https://mariosouto.com";
-  const ogImage = image || "https://mariosouto.com/metadata/og.jpg";
+  const ogImage = image 
+    ? `${process.env.NEXT_PUBLIC_SITE_URL}/api/og?bg=${image}`
+    : `${process.env.NEXT_PUBLIC_SITE_URL}/api/og?title=${title}&page=${pagePath}`;
 
   return (
     <NextHead>
