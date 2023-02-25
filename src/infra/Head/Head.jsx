@@ -1,7 +1,8 @@
 import NextHead from "next/head";
+import { withRouter } from "next/router";
 
-export function Head({ title, ogTitle, description, image, children }) {
-  const url = "https://mariosouto.com";
+export const Head = withRouter(function Head({ router, title, ogTitle, description, image, children }) {
+  const url = "https://mariosouto.com" + router.route + "/";
   const ogImage = image !== undefined 
     ? `${process.env.NEXT_PUBLIC_SITE_URL}/api/og?bg=${image}`
     : `${process.env.NEXT_PUBLIC_SITE_URL}/api/og?title=${title || ogTitle}`;
@@ -43,4 +44,4 @@ export function Head({ title, ogTitle, description, image, children }) {
       {children}
     </NextHead>
   );
-}
+})
