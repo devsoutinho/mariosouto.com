@@ -1,6 +1,16 @@
 import { createPost } from "../infra/createPost";
 
 export const setup = [
+  
+  createPost({
+    title: "Placa de Captura de Vídeo - Video Capture",
+    url: "https://amzn.to/3kAnaAh",
+    date: "2021-09-20",
+    description: "Se você fica se perguntando 'como pegar a tela do switch/camera DSLR/qualquer coisa no OBS'? Essa aqui é a resposta que você tava precisando",
+    source: "Setup",
+    category: "workstation",
+    tags: ["placa de captura", "dslr", "nintendo switch", "afiliado"],
+  }),
   createPost({
     title: "Macbook Pro 13 polegadas, processador M1, 16gb de RAM (Spacegray)",
     url: "https://amzn.to/3m10ee5",

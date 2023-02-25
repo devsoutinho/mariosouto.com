@@ -22,7 +22,7 @@ export default function Uses({ contents }) {
   return (
     <>
       <Head
-        ogTitle={"DevSoutinho - Setup"}
+        ogTitle={"Quer conhecer o meu setup de trabalho e gravação? - Meu Setup"}
         title={`Setup - ${config.owner}`}
         description={title}
       />
