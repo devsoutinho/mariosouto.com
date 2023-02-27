@@ -23,21 +23,17 @@ export default async function handler(req) {
     boldFontP,
   ]);
 
+  
   try {
     const image = atob(req.nextUrl.searchParams.get("bg") || "");
-    // const { title, path } = JSON.parse(
-    //   atob(req.nextUrl.searchParams.get("params") || "")
-    // );
-    const output = atob(req.nextUrl.searchParams.get("params")).split("%%%%");
-    const baseTitle = output[0];
-    const basePath = output[1];
+    console.log("image", image);
+    const output = atob(req.nextUrl.searchParams.get("params") || "").split("%%%%");
+    const baseTitle = output[0] || "";
+    const basePath = output[1] || "";
     
     const title = baseTitle;
     const path = basePath;
 
-    console.log("params", atob(req.nextUrl.searchParams.get("params")));
-    console.log("title", title);
-    console.log("path", path);
 
     return new ImageResponse(
       (
