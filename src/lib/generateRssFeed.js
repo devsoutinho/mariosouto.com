@@ -4,6 +4,7 @@ import { mkdir, writeFile } from 'fs/promises'
 
 import { getAllArticles } from './getAllContent'
 import config from "@src/config"
+import { buildOgImageUrl } from "@src/infra/Head/Head"
 
 export async function generateRssFeed() {
   let articles = await getAllArticles()
@@ -13,6 +14,8 @@ export async function generateRssFeed() {
     email: config.email,
   }
 
+  console.log("config.description", config.description);
+
   let feed = new Feed({
     title: author.name,
     description: config.description,
@@ -21,7 +24,7 @@ export async function generateRssFeed() {
     link: siteUrl,
     image: `${siteUrl}/favicon/favicon.png`,
     favicon: `${siteUrl}/favicon/favicon.ico`,
-    copyright: `All rights reserved ${new Date().getFullYear()}`,
+    copyright: `Todos os direitos reservados ${new Date().getFullYear()}`,
     feedLinks: {
       rss2: `${siteUrl}/rss/feed.xml`,
       json: `${siteUrl}/rss/feed.json`,
@@ -29,10 +32,22 @@ export async function generateRssFeed() {
   })
 
   for (let article of articles) {
-    let url = `${siteUrl}/posts/${article.slug}`
+    const path = `/posts/${article.slug}`;
+    let url = `${siteUrl}${path}`
     let html = ReactDOMServer.renderToStaticMarkup(
       <article.component isRssFeed />
     )
+
+    const image = buildOgImageUrl({
+      title: article.title,
+      image: article.image,
+      routePath: path,
+    });
+    
+    console.log("====");
+    console.log(article.title);
+    console.log("image", image);
+    console.log("====");
 
     feed.addItem({
       title: article.title,
@@ -43,12 +58,13 @@ export async function generateRssFeed() {
       author: [author],
       contributor: [author],
       date: new Date(article.date),
-    })
-  }
+      ...(image && { image })
+    });
+}
 
-  await mkdir('./public/rss', { recursive: true })
-  await Promise.all([
-    writeFile('./public/rss/feed.xml', feed.rss2(), 'utf8'),
-    writeFile('./public/rss/feed.json', feed.json1(), 'utf8'),
-  ])
+await mkdir('./public/rss', { recursive: true })
+await Promise.all([
+  writeFile('./public/rss/feed.xml', feed.rss2(), 'utf8'),
+  writeFile('./public/rss/feed.json', feed.json1(), 'utf8'),
+])
 }

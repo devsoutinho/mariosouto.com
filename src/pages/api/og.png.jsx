@@ -25,8 +25,19 @@ export default async function handler(req) {
 
   try {
     const image = atob(req.nextUrl.searchParams.get("bg") || "");
-    const title = atob(req.nextUrl.searchParams.get("title") || "");
-    const path = atob(req.nextUrl.searchParams.get("path") || "");
+    // const { title, path } = JSON.parse(
+    //   atob(req.nextUrl.searchParams.get("params") || "")
+    // );
+    const output = atob(req.nextUrl.searchParams.get("params")).split("%%%%");
+    const baseTitle = output[0];
+    const basePath = output[1];
+    
+    const title = baseTitle;
+    const path = basePath;
+
+    console.log("params", atob(req.nextUrl.searchParams.get("params")));
+    console.log("title", title);
+    console.log("path", path);
 
     return new ImageResponse(
       (
@@ -184,6 +195,7 @@ export default async function handler(req) {
       }
     )
   } catch (e) {
+    console.error(e);
     return new Response(`Failed to generate the image`, {
       status: 400,
     });

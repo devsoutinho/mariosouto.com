@@ -1,12 +1,33 @@
 import NextHead from "next/head";
 import { withRouter } from "next/router";
 
+export function buildOgImageUrl({
+  title,
+  ogTitle,
+  routePath,
+  image,
+}) {
+  const parsedTitle = (ogTitle || title || "");
+  const parsedRoutePath = (routePath || "");
+  const parsedImage = btoa(image || "");
+  const parsedParams = btoa(parsedTitle + "%%%%" + parsedRoutePath);
+
+const output = image !== undefined
+  ? `${process.env.NEXT_PUBLIC_SITE_URL}/api/og.png?bg=${parsedImage}`
+  : `${process.env.NEXT_PUBLIC_SITE_URL}/api/og.png?params=${parsedParams}`
+
+return output;
+}
+
 export const Head = withRouter(function Head({ router, title, ogTitle, description, image, children }) {
-  const routePath = router.route === "/" ? "" : router.route; 
+  const routePath = router.route === "/" ? "" : router.route;
   const url = "https://mariosouto.com" + routePath;
-  const ogImage = image !== undefined 
-    ? `${process.env.NEXT_PUBLIC_SITE_URL}/api/og?bg=${btoa(image)}`
-    : `${process.env.NEXT_PUBLIC_SITE_URL}/api/og?title=${btoa(ogTitle || title)}&path=${btoa(routePath)}`;
+  const ogImage = buildOgImageUrl({
+    title,
+    ogTitle,
+    routePath,
+    image,
+  });
 
   return (
     <NextHead>
@@ -19,7 +40,7 @@ export const Head = withRouter(function Head({ router, title, ogTitle, descripti
       <meta name="description" content={description} />
       <meta property="og:description" content={description} />
       <meta property="twitter:description" content={description} />
-      
+
       {/* URL */}
       <meta property="og:url" content={url} />
       <meta property="twitter:url" content={url} />
@@ -35,7 +56,7 @@ export const Head = withRouter(function Head({ router, title, ogTitle, descripti
       <meta property="og:updated_time" content="1440432930" />
 
       {/* Favicon */}
-      <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" /> 
+      <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
       <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
       <link rel="manifest" href="/favicon/site.webmanifest" />

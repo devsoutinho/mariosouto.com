@@ -348,10 +348,10 @@ export default function Home({ articles }) {
 }
 
 export async function getStaticProps() {
-  if (process.env.NODE_ENV === 'production') {
+  // if (process.env.NODE_ENV === 'production') {
     await generateSitemap();
     await generateRssFeed();
-  }
+  // }
 
   return {
     props: {
