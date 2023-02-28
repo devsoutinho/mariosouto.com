@@ -32,4 +32,10 @@ export const redirects = [
     "destination": "https://devsoutinho.notion.site/Desenho-com-CSS-Bandeiras-DevSoutinhoChallenges-800d9c4fceff4bb1a24cf218879b067f",
     "permanent": true,
   },
+  // Ressources
+  {
+    "source": "/cursos/crudcomqualidade/bg",
+    "destionation": "https://images.unsplash.com/photo-1616400619175-5beda3a17896?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2874&q=80",
+    "permanent": true,
+  }
 ]
