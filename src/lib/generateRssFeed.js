@@ -44,11 +44,6 @@ export async function generateRssFeed() {
       routePath: path,
     });
     
-    console.log("====");
-    console.log(article.title);
-    console.log("image", image);
-    console.log("====");
-
     feed.addItem({
       title: article.title,
       id: url,
