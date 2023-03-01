@@ -1,0 +1,32 @@
+import { Video, Link, ArticleLayout } from '@src/components/content'
+
+export const meta = {
+  author: 'Mario Souto',
+  date: '2023-03-01',
+  title: 'Comentários de códigos são ruins?',
+  slug: 'comentarios-de-codigos-sao-ruins',
+  description: 'Bom pra quem leu clean code, meio que essa pode parecer uma verdade máxima da programação. Eu discordo fortemente dessa afirmação.',
+  source: 'devsoutinho',
+  category: 'shorts',
+  tags: ['javascript', 'variável', 'programação'],
+  comments: true,
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+
+Bom pra quem leu clean code, meio que essa pode parecer uma verdade máxima da programação. Eu discordo fortemente dessa afirmação.
+
+Minha discordância vem do fato de que essa discussão passa próxima da discussão sobre documentação, em ambos os casos as pessoas vão dizer "ahhh mas isso vai mofar e ninguém vai atualizar".
+
+Um ponto que muda tudo é você ter ciência do motivo da documentação: Você ta documentando O QUE o código faz ou POR QUE ele faz isso?
+
+Convenhamos que O QUE o código faz é algo que você pode ver no próprio código, e se você não consegue entender o código, você não vai entender a documentação.
+
+O POR QUE é algo que você não consegue ver no código, e que é muito importante para entender o código. E é aqui que entra a documentação.
+
+Vira e mexe você cria uma função que combina objetos ou alguma coisa e existe um motivo pra isso ser do jeito que é. Pra mim esses são casos ótimos de documentação, e pra vocês?
+
+Em resumo, comentários de códigos não são ruins em si, o que é importante é a qualidade e relevância da informação documentada. Documente o POR QUE, não apenas o QUE. #programação #documentação
+
+<Video videoId="lTjwm1CghDY" youtube />
