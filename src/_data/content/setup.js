@@ -1,7 +1,18 @@
 import { createPost } from "../infra/createPost";
 
+// AliExpress: https://portals.aliexpress.com/affiportals/web/ad_center.htm?spm=0._dscenter_dada.0.0.47d0rsUHrsUHwc
+// Amazon: https://associados.amazon.com.br/home
+
 export const setup = [
-  
+  createPost({
+    title: "Suporte de Montagem de Luz de Mesa - Vijim LS-01",
+    url: "https://s.click.aliexpress.com/e/_DE3m8WZ",
+    date: "2021-09-20",
+    description: "Eu uso esse suporte pra montar a luz de mesa que eu uso no meu setup. É bem simples, mas funciona muito bem.",
+    source: "Setup",
+    category: "workstation",
+    tags: ["suporte", "luz", "setup", "afiliado"],
+  }),
   createPost({
     title: "Placa de Captura de Vídeo - Video Capture",
     url: "https://amzn.to/3kAnaAh",
