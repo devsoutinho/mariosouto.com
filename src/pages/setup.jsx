@@ -36,6 +36,7 @@ export default function Uses({ contents }) {
             <ToolsSection key={category} title={category}>
               {contents.filter((content) => content.category === slugify(category)).map((content) => (
                 <Tool
+                  slug={content.slug}
                   key={content.url}
                   title={content.title}
                   href={content.url}
@@ -62,9 +63,9 @@ function ToolsSection({ children, ...props }) {
   )
 }
 
-function Tool({ title, href, cta, children }) {
+function Tool({ slug, title, href, cta, children }) {
   return (
-    <Card as="li">
+    <Card as="li" id={slug}>
       <Card.Title as="h3" href={href}>
         {title}
       </Card.Title>
