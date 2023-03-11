@@ -26,6 +26,8 @@ export function Card({ as: Component = 'div', className, children, id }) {
           onClick={() => {
             const url = `${window.location.origin}${window.location.pathname}#${id}`;
             navigator.clipboard.writeText(url);
+            document.querySelector(`#${id}`).scrollIntoView({behavior: "smooth"})
+            history.pushState(null, null, "#" + id);
           }}
         >
           <LinkIcon className="h-6 w-6 flex-none" />
