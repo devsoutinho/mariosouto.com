@@ -22,7 +22,7 @@ export function Card({ as: Component = 'div', className, children, id }) {
     >
       {id && (
         <div
-          className="absolute text-zinc-400 dark:text-zinc-200 -right-4 cursor-copy z-30"
+          className="absolute text-zinc-400 dark:text-zinc-200 right-0 cursor-copy z-30"
           onClick={() => {
             const url = `${window.location.origin}${window.location.pathname}#${id}`;
             navigator.clipboard.writeText(url);
@@ -47,7 +47,7 @@ Card.Link = function CardLink({ children, ...props }) {
         {...props}
       >
         <span className="absolute -inset-y-6 -inset-x-4 z-20 sm:-inset-x-6 sm:rounded-2xl" />
-        <span className="relative z-10">{children}</span>
+        <span className="relative z-10 pr-6 inline-block">{children}</span>
       </Link>
     </>
   )
