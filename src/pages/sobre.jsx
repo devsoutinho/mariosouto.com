@@ -85,19 +85,19 @@ export default function Sobre() {
           <div className="lg:pl-20">
             <ul role="list">
               <SocialLink href={config.social.youtube} icon={YouTubeIcon}>
-                Me segue no YouTube
+                Se inscreve no YouTube \o
               </SocialLink>
               <SocialLink href={config.social.twitter} icon={TwitterIcon} className="mt-4">
                 Me segue no Twitter
               </SocialLink>
               <SocialLink href={config.social.instagram} icon={InstagramIcon} className="mt-4">
-                Me segue no Instagram
+                Me acompanha Instagram
               </SocialLink>
               <SocialLink href={config.social.github} icon={GitHubIcon} className="mt-4">
-                Me segue no GitHub
+                Olha meus projetos no GitHub
               </SocialLink>
               <SocialLink href={config.social.linkedin} icon={LinkedInIcon} className="mt-4">
-                Me segue no LinkedIn
+                LinkedIn fica a seu critério
               </SocialLink>
               <SocialLink
                 href={`mailto:${config.email}`}
