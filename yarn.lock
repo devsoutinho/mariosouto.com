@@ -33,6 +33,7 @@ __metadata:
     fast-glob: ^3.2.11
     feed: ^4.2.2
     focus-visible: ^5.2.0
+    lodash: ^4.17.21
     next: 13.0.2
     postcss: ^8.4.21
     postcss-focus-visible: ^6.0.4
@@ -42,6 +43,7 @@ __metadata:
     react-dom: 18.2.0
     remark-gfm: ^3.0.1
     tailwindcss: ^3.2.1
+    unidecode: ^0.1.8
     webpack: ^5.75.0
   languageName: unknown
   linkType: soft
@@ -4309,7 +4311,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.15, lodash@npm:^4.17.19":
+"lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.21":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
@@ -7403,6 +7405,13 @@ __metadata:
     has-symbols: ^1.0.3
     which-boxed-primitive: ^1.0.2
   checksum: b7a1cf5862b5e4b5deb091672ffa579aa274f648410009c81cca63fed3b62b610c4f3b773f912ce545bb4e31edc3138975b5bc777fc6e4817dca51affb6380e9
+  languageName: node
+  linkType: hard
+
+"unidecode@npm:^0.1.8":
+  version: 0.1.8
+  resolution: "unidecode@npm:0.1.8"
+  checksum: 8d07a15a28e6d2b3fb595aa3439d710c968b98a6d7fa5b2d5fdbd3498042f27e1ba1d5925541912ee14368b8a2d35767d66e3f56199f8cde1feafd62a8acd6a2
   languageName: node
   linkType: hard
 

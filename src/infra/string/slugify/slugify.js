@@ -1,5 +1,8 @@
+import unidecode from "unidecode";
+
 export function slugify(string) {
-  return string
+  const normalizedString = unidecode(string);
+  return normalizedString
     .toLowerCase()
     .replace(/[^\w ]+/g, "")
     .replace(/ +/g, "-");
