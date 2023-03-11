@@ -50,6 +50,6 @@ export const Comments = ({ slug }) => {
   }, [darkModeControl.isDarkMode, slug]);
 
   return <div>
-    <div ref={ref} />
+    <div id="comments-area" ref={ref} />
   </div>;
 };
