@@ -11,7 +11,8 @@ const config = {
     "github": "https://github.com/omariosouto",
     "linkedin": "https://linkedin.com/in/omariosouto",
     "instagram": "https://instagram.com/devsoutinho",
-    "youtube": "https://youtube.com/@DevSoutinho"
+    "youtube": "https://youtube.com/@DevSoutinho",
+    "discord": "https://mariosouto.com/discord"
   }
 }
 

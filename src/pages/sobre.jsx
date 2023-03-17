@@ -5,6 +5,7 @@ import clsx from 'clsx'
 
 import { Container } from '@src/components/Container'
 import {
+  DiscordIcon,
   GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
@@ -86,6 +87,9 @@ export default function Sobre() {
             <ul role="list">
               <SocialLink href={config.social.youtube} icon={YouTubeIcon}>
                 Se inscreve no YouTube \o
+              </SocialLink>
+              <SocialLink href={config.social.discord} icon={DiscordIcon}>
+                Entra pra minha comunidade no Discord
               </SocialLink>
               <SocialLink href={config.social.twitter} icon={TwitterIcon} className="mt-4">
                 Me segue no Twitter

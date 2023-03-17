@@ -13,6 +13,7 @@ import {
   InstagramIcon,
   LinkedInIcon,
   TwitterIcon,
+  DiscordIcon,
 } from '@src/components/SocialIcons'
 import logoAirbnb from '@src/images/logos/airbnb.svg'
 import logoFacebook from '@src/images/logos/facebook.svg'
@@ -305,6 +306,11 @@ export default function Home({ articles }) {
               href={config.social.twitter}
               aria-label="Me siga no YouTube"
               icon={YouTubeIcon}
+            />
+            <SocialLink
+              href={config.social.discord}
+              aria-label="Entre no meu Discord"
+              icon={DiscordIcon}
             />
             <SocialLink
               href={config.social.twitter}
