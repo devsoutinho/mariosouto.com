@@ -73,7 +73,7 @@ export default function Sobre() {
                 Nasci na cidade de São Paulo e atuo como instrutor e desenvolvedor Front End. Sou formado em Análise e Desenvolvimento de Sistemas pela UNIP e técnico em Informática para Internet pela ETEC Parque Belém.
               </p>
               <p>
-                Meu primeiro trabalho foi como “tio de festa infantil”, paralelo a isso comecei realmente no mundo da web criando sites para meus servidores de Tibia quando tinha 11 anos. Hoje com 21 estou oficialmente a 4 anos na área de programação, onde 2 foram na Agência Digital Pulso participando de diversos projetos com foco principal como Front End e volta e meia fazendo um papel mais Full Stack.
+                Meu primeiro trabalho foi como “tio de festa infantil”, paralelo a isso comecei realmente no mundo da web criando sites para meus servidores de Tibia quando tinha 11 anos. Hoje com 25 estou a um bom tempo já na área de programação, onde 2 foram na Agência Digital Pulso participando de diversos projetos com foco principal como Front End e volta e meia fazendo um papel mais Full Stack.
               </p>
               <p>
                 Sou apaixonado por dar aulas e curti muito fazer isso em meio aos projetos que participei no Grupo Caelum desde criar/manter os sites, webapps, criação de cursos (React, JavaScript Moderno para WebApps e o de Angular) até um compilador/executor de código universal que tinhamos por lá.
@@ -88,7 +88,7 @@ export default function Sobre() {
               <SocialLink href={config.social.youtube} icon={YouTubeIcon}>
                 Se inscreve no YouTube \o
               </SocialLink>
-              <SocialLink href={config.social.discord} icon={DiscordIcon}>
+              <SocialLink href={config.social.discord} icon={DiscordIcon} className="mt-4">
                 Entra pra minha comunidade no Discord
               </SocialLink>
               <SocialLink href={config.social.twitter} icon={TwitterIcon} className="mt-4">
