@@ -8,7 +8,7 @@ import { buildOgImageUrl } from "@src/infra/Head/Head"
 
 export async function generateRssFeed() {
   let articles = await getAllArticles()
-  let siteUrl = process.env.NEXT_PUBLIC_SITE_URL.replace("http://", "https://");
+  let siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace("http://", "https://");
   let author = {
     name: config.nickname ? `${config.owner} (${config.nickname})` : config.owner,
     email: config.email,
