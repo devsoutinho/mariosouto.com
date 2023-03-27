@@ -7,3 +7,9 @@ This is the source code for my personal website, [mariosouto.com](http://marioso
 ```sh
 yarn dev
 ```
+
+## How to test
+
+```sh
+yarn test
+```
