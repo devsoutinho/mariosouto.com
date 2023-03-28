@@ -5,10 +5,11 @@ import { mkdir, writeFile } from 'fs/promises'
 import { getAllArticles } from './getAllContent'
 import config from "@src/config"
 import { buildOgImageUrl } from "@src/infra/Head/Head"
+import { PUBLIC_SITE_URL } from "data"
 
 export async function generateRssFeed() {
   let articles = await getAllArticles()
-  let siteUrl = process.env.NEXT_PUBLIC_SITE_URL?.replace("http://", "https://");
+  let siteUrl = (PUBLIC_SITE_URL)?.replace("http://", "https://");
   let author = {
     name: config.nickname ? `${config.owner} (${config.nickname})` : config.owner,
     email: config.email,

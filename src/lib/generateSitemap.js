@@ -1,11 +1,12 @@
 import fs from "fs";
 import glob from 'fast-glob'
+import { PUBLIC_SITE_URL } from "data";
 
 function addPage(page) {
   const path = page.replace('src/pages', '').replace('.js', '').replace('.mdx', '')
   const route = path === '/index' ? '' : path
   return `  <url>
-    <loc>${`${process.env.NEXT_PUBLIC_SITE_URL}${route}`}</loc>
+    <loc>${`${PUBLIC_SITE_URL}${route}`}</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>

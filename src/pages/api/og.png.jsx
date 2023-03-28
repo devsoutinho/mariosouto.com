@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from '@vercel/og'
+import { PUBLIC_SITE_URL } from "data";
 
 const FRAME_PADDING = "6vw";
 
@@ -15,7 +16,7 @@ const boldFontP = fetch(
   new URL("../../../public/fonts/Roboto-Bold.ttf", import.meta.url)
 ).then((res) => res.arrayBuffer());
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL
+const SITE_URL = PUBLIC_SITE_URL;
 
 export default async function handler(req) {
   const [regularFont, boldFont] = await Promise.all([
