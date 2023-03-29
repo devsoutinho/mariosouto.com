@@ -1,3 +1,4 @@
+import { PUBLIC_SITE_URL } from "data";
 import NextHead from "next/head";
 import { withRouter } from "next/router";
 
@@ -13,8 +14,8 @@ export function buildOgImageUrl({
   const parsedParams = btoa(parsedTitle + "%%%%" + parsedRoutePath);
 
 const output = image !== undefined
-  ? `${process.env.NEXT_PUBLIC_SITE_URL}/api/og.png?bg=${parsedImage}`
-  : `${process.env.NEXT_PUBLIC_SITE_URL}/api/og.png?params=${parsedParams}`
+  ? `${PUBLIC_SITE_URL}/api/og.png?bg=${parsedImage}`
+  : `${PUBLIC_SITE_URL}/api/og.png?params=${parsedParams}`
 
 return output;
 }
