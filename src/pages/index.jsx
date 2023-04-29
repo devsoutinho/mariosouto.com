@@ -1,8 +1,9 @@
-import React from "react"; 
+import React from "react";
 import config from "@src/config.js";
 import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
+import Script from "next/script";
 
 import { Button } from '@src/components/Button'
 import { Card } from '@src/components/Card'
@@ -121,12 +122,13 @@ function Newsletter() {
 
   return (
     <form
-      className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
-      action="https://mariosouto.us8.list-manage.com/subscribe/post?u=8225f161ef3ee7a744fd4a2ba&id=2e2754236e"
+      klicksend-form-id='QXuEYKn'
       method="post"
-      id="mc-embedded-subscribe-form"
-      name="mc-embedded-subscribe-form"
+      action="https://handler.klicksend.com.br/subscription/QXuEYKn"
+      className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
     >
+      <Script src="https://send.klickpages.com.br/static/js/recaptcha.min.js" />
+      <style global jsx>{`#email + div { display: none !important; }`}</style>
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <MailIcon className="h-6 w-6 flex-none" />
         <span className="ml-3">Quer saber o que eu ando aprontando?</span>
@@ -134,33 +136,36 @@ function Newsletter() {
       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
         Seja notificado quando eu publicar algo novo e cancele a inscrição a qualquer momento 😉
       </p>
+      {/* Newsletter */}
       <div className="mt-6 flex">
         <input
           type="email"
-          placeholder="pessoa@provedor.com"
-          aria-label="Endereço de e-mail"
-          required
-          className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-primary-x500 focus:outline-none focus:ring-4 focus:ring-primary-x500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-primary-x400 dark:focus:ring-primary-x400/10 sm:text-sm"
-          name="EMAIL"
-          id="mce-EMAIL"
+          name="email"
+          id="email"
+          placeholder="Email"
           value={email}
+          required
           onChange={(e) => setEmail(e.target.value.trim().replaceAll(" ", ""))}
           onBlur={() => setEmailTouched(true)}
+          className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-primary-x500 focus:outline-none focus:ring-4 focus:ring-primary-x500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-primary-x400 dark:focus:ring-primary-x400/10 sm:text-sm"
         />
-          {/* <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups--> */}
-          <div
-            style={{ position: "absolute", left: "-5000px" }}
-            aria-hidden="true"
-          >
-            <input
-              type="text"
-              name="b_8225f161ef3ee7a744fd4a2ba_2e2754236e"
-              tabIndex={-1}
-            />
-          </div>
         <Button type="submit" id="mc-embedded-subscribe" className="ml-4 flex-none">
           Entrar
         </Button>
+        <input
+          type="checkbox"
+          name="gdpr"
+          id="gdpr"
+          placeholder="Concordo em receber os e-mails"
+          value="Concordo em receber os e-mails"
+          required
+          defaultChecked
+          style={{ position: "absolute", left: "-50000px" }}
+          tabIndex={-1}
+        />
+        <div style={{ position: "absolute", left: "-50000px" }} aria-hidden="true">
+          <input type="text" name="b_QXuEYKn" tabIndex={-1} value="" />
+        </div>
       </div>
     </form>
   )
@@ -225,9 +230,8 @@ function Resume() {
               <dt className="sr-only">Date</dt>
               <dd
                 className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-                aria-label={`${role.start.label ?? role.start} until ${
-                  role.end.label ?? role.end
-                }`}
+                aria-label={`${role.start.label ?? role.start} until ${role.end.label ?? role.end
+                  }`}
               >
                 <time dateTime={role.start.dateTime ?? role.start}>
                   {role.start.label ?? role.start}
@@ -355,8 +359,8 @@ export default function Home({ articles }) {
 
 export async function getStaticProps() {
   // if (process.env.NODE_ENV === 'production') {
-    await generateSitemap();
-    await generateRssFeed();
+  await generateSitemap();
+  await generateRssFeed();
   // }
 
   return {
