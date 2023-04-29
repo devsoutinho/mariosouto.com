@@ -15,8 +15,6 @@ export async function generateRssFeed() {
     email: config.email,
   }
 
-  console.log("config.description", config.description);
-
   let feed = new Feed({
     title: author.name,
     description: config.description,

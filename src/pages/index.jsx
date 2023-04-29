@@ -157,14 +157,14 @@ function Newsletter() {
           name="gdpr"
           id="gdpr"
           placeholder="Concordo em receber os e-mails"
-          value="Concordo em receber os e-mails"
+          defaultValue="Concordo em receber os e-mails"
           required
           defaultChecked
           style={{ position: "absolute", left: "-50000px" }}
           tabIndex={-1}
         />
         <div style={{ position: "absolute", left: "-50000px" }} aria-hidden="true">
-          <input type="text" name="b_QXuEYKn" tabIndex={-1} value="" />
+          <input type="text" name="b_QXuEYKn" tabIndex={-1} defaultValue="" />
         </div>
       </div>
     </form>
