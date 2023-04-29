@@ -10,11 +10,6 @@ export const redirects = [
     "destination": "https://discord.gg/nAsj78tdWc",
     "permanent": true
   },
-  {
-    "source": "/newsletter",
-    "destination": "https://labs.mariosouto.com/newsletter",
-    "permanent": false
-  },
   // Campanhas
   {
     "source": "/links/eventos/imersao-dev-janeiro-2023",
