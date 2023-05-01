@@ -1,0 +1,72 @@
+import { Video, Link, ArticleLayout } from '@src/components/content'
+
+export const meta = {
+  author: 'Mario Souto',
+  date: '2023-05-02',
+  title: 'contenteditable: O atributo para criar inputs de texto',
+  description: 'Descubra como usar o atributo content editable em HTML para criar recursos interativos, como editores de texto.',
+  source: 'devsoutinho',
+  category: 'post',
+  tags: ['threads', 'javascript', 'devtips', 'contenteditable'],
+  comments: true,
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+
+Sabia que você consegue fazer qualquer elemento do HTML virar um input de texto? 🤯
+
+O "contenteditable" é um atributo que permite tornar qualquer elemento HTML editável pelo usuário. Você pode usá-lo para criar editores de texto enriquecido, interfaces de arrastar e soltar ou outros recursos interativos.
+
+Para usar o "contenteditable", você precisa definir o atributo como "true" no elemento que deseja tornar editável, por exemplo:
+
+```html
+<p contenteditable="true">Este parágrafo é editável.</p>
+```
+
+Você também pode ouvir eventos de entrada no elemento editável para obter informações sobre as ações do usuário, como o objeto dataTransfer que contém os dados que foram colados ou soltos no elemento.
+
+Por exemplo, você pode exibir os dados HTML que foram colados no elemento, assim:
+
+```html
+<p contenteditable="true">Cole algum conteúdo HTML aqui.</p>
+<p id="result"></p>
+<script>
+  const editable = document.querySelector('[contenteditable="true"]');
+  const result = document.getElementById('result');
+
+  editable.addEventListener('input', (e) => {
+    result.textContent = e.dataTransfer.getData('text/html');
+  });
+</script>
+```
+
+Finalmente, mostrarei o exemplo básico que trago: um editor de CSS em tempo real para sua página! 🚨 Não use em produção (a menos que seu projeto precise disso haha)
+
+<iframe
+  height="300"
+  width="100%"
+  scrolling="no"
+  title="Exemplo de código"
+  src="https://codepen.io/omariosouto/embed/vYVexOR?default-tab=html%2Cresult&editable=true"
+  frameborder="no"
+  loading="lazy"
+  allowtransparency="true"
+  allowfullscreen="true"
+/>
+
+Uma dica legal é estudar sobre como utilizar essa propriedade no framework que você trabalha. Deixo aqui as referências para você se aprofundar:
+
+- [Contenteditable - MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/contentEditable)
+- [Lib para purificar o output](https://github.com/cure53/DOMPurify)
+- [User input e conrtoles - MDN](https://developer.mozilla.org/en-US/docs/web/guide/user_input_methods)
+- [Input event data transfer - MDN](https://developer.mozilla.org/en-US/docs/web/api/inputevent/datatransfer)
+
+
+Me segue ai e acompanha para mais dicas de desenvolvimento em geral! 😍
+
+- Blog: https://mariosouto.com
+- YouTube: https://youtube.com/@DevSoutinho
+
+## Postagens por ai: 
+- [Thread no twitter](???)
