@@ -103,12 +103,12 @@ module.exports = {
           color: 'var(--tw-prose-body)',
           lineHeight: theme('lineHeight.7'),
           '> *': {
-            marginTop: theme('spacing.10'),
-            marginBottom: theme('spacing.10'),
+            marginTop: theme('spacing.6'),
+            marginBottom: theme('spacing.6'),
           },
           p: {
-            marginTop: theme('spacing.7'),
-            marginBottom: theme('spacing.7'),
+            marginTop: theme('spacing.4'),
+            marginBottom: theme('spacing.4'),
           },
 
           // Headings
@@ -161,7 +161,7 @@ module.exports = {
             fontSize: theme('fontSize.sm')[0],
             fontWeight: theme('fontWeight.semibold'),
             backgroundColor: 'var(--tw-prose-code-bg)',
-            borderRadius: theme('borderRadius.lg'),
+            borderRadius: theme('borderRadius.xs'),
             paddingLeft: theme('spacing.1'),
             paddingRight: theme('spacing.1'),
           },
@@ -200,10 +200,12 @@ module.exports = {
           },
           'ul, ol': {
             paddingLeft: theme('spacing.6'),
+            paddingTop: theme('spacing.2'),
+            paddingBottom: theme('spacing.2'),
           },
           li: {
-            marginTop: theme('spacing.6'),
-            marginBottom: theme('spacing.6'),
+            marginTop: theme('spacing.1'),
+            marginBottom: theme('spacing.1'),
             paddingLeft: theme('spacing[3.5]'),
           },
           'li::marker': {
@@ -231,7 +233,7 @@ module.exports = {
             fontSize: theme('fontSize.sm')[0],
             fontWeight: theme('fontWeight.medium'),
             backgroundColor: 'var(--tw-prose-pre-bg)',
-            borderRadius: theme('borderRadius.3xl'),
+            borderRadius: theme('borderRadius.md'),
             padding: theme('spacing.8'),
             overflowX: 'auto',
             border: '1px solid',
