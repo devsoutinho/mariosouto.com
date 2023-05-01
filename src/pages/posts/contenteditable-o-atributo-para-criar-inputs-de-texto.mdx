@@ -57,6 +57,18 @@ Agora que você chegou até aqui, mostrarei o exemplo que mais gosto de mostrar 
 
 > 🚨 Não use em produção (a menos que seu projeto precise disso haha)
 
+Importante reforçar também que você precisará utilizar `aria-roles` para deixar o elemento acessível aos leitores de tela:
+
+```html
+<div
+  role="textbox"
+  contenteditable="true"
+  aria-placeholder="5-digit zipcode"
+  aria-labelledby="txtboxLabel"></div>
+```
+
+> Link da MDN: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/textbox_role
+
 Uma dica legal é estudar sobre como utilizar essa propriedade no framework que você trabalha. Deixo aqui as referências para você se aprofundar:
 
 - [Contenteditable - MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/contentEditable)
