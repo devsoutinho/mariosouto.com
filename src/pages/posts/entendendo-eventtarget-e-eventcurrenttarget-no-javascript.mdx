@@ -1,0 +1,41 @@
+import { Video, Link, ArticleLayout } from '@src/components/content'
+
+export const meta = {
+  author: 'Mario Souto',
+  date: '2023-05-01',
+  title: 'Entendendo event.target e event.currentTarget no JavaScript',
+  slug: 'entendendo-eventtarget-e-eventcurrenttarget-no-javascript',
+  description: 'Aprenda a diferença entre event.target e event.currentTarget no JavaScript, entenda como usá-los e confira um exemplo prático para aprimorar suas habilidades em manipulação de eventos.',
+  source: 'devsoutinho',
+  category: 'post',
+  tags: ['threads', 'javascript', 'programação'],
+  comments: true,
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+Você aí, sabia que além do "event.target", bastante usado no JavaScript, existe o "currentTarget" e que várias vezes você quis ter ele no seu código e não sabia?
+
+A diferença entre event.target e event.currentTarget é que event.target é o elemento que disparou o evento, enquanto event.currentTarget é o elemento que possui o listener de eventos vinculado a ele.
+
+Por exemplo, você tem um botão dentro de uma div, e ambos têm listener de eventos de clique. Clicar no botão disparará ambos os eventos. No handler de eventos do botão, event.target será o botão e event.currentTarget também será o botão. No handler de eventos da div, event.target ainda será o botão, mas event.currentTarget será a div. A propriedade event.relatedTarget é relevante apenas para eventos de mouse e contém o elemento que o mouse entrou ou saiu.
+
+<iframe
+  height="300"
+  width="100%"
+  scrolling="no"
+  title="Exemplo de código"
+  src="https://codepen.io/omariosouto/embed/BaqwoMq?default-tab=result"
+  frameborder="no"
+  loading="lazy"
+  allowtransparency="true"
+  allowfullscreen="true"
+/>
+
+Uma dica legal é estudar sobre o delegate pattern. Deixo aqui as referências para você se aprofundar:
+
+- [Event.target - MDN](https://developer.mozilla.org/en-US/docs/Web/API/Event/target)
+- [Event.currentTarget - MDN](https://developer.mozilla.org/en-US/docs/Web/API/Event/currentTarget)
+- [Event Targets - MDN](https://developer.mozilla.org/en-US/docs/web/api/event/comparison_of_event_targets)
+
+Continue acompanhando o blog para mais dicas de desenvolvimento em geral! 😍
