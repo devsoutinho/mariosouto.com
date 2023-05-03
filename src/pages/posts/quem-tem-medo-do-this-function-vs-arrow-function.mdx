@@ -42,7 +42,7 @@ myCustomObject.MyArrowFunction();
 
 1. O primeiro console log `"[solto] this"`, vai referenciar o window, se você estiver rodando na web e o global se você estiver no Node. Importante reforçar que hoje em dia, também temos o globalThis que permite que seu código acesse o escopo global independente do ambiente em que ele esteja rodando.
 
-https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/globalThis
+[globalThis - MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/globalThis)
 
 2. O segundo é o this dentro de uma function. Por padrão o this dentro de uma function vai referenciar **o escopo de onde ela está sendo executada**, neste caso, ela vai ser executada no escopo global, por consequencia é o mesmo this do item anterior.
 
