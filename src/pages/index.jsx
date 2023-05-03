@@ -122,12 +122,11 @@ function Newsletter() {
 
   return (
     <form
-      klicksend-form-id='QXuEYKn'
-      method="post"
-      action="https://handler.klicksend.com.br/subscription/QXuEYKn"
+      id="sib-form"
+      method="POST"
+      action="https://1096123a.sibforms.com/serve/MUIEAAWNz-t-N2bjbRJ_Jo1wmVABegttSjvJlzohwI09O2COyKOwRAywZjfl6MTDVvMa0nwrnfrgI5URno23eWnBzYwdpXoR6j30WAA8m8vb9gg3cpxLQKjq-nC-TPK5q8g30io2Ac87chGu00Ta8yam_23hhxOFdojjqnsmQg744jvarMK1L0qkBegbXwJam2HMoOLFo8Eo13AU"
       className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40"
     >
-      <Script src="https://send.klickpages.com.br/static/js/recaptcha.min.js" />
       <style global jsx>{`#email + div { display: none !important; }`}</style>
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <MailIcon className="h-6 w-6 flex-none" />
@@ -139,9 +138,11 @@ function Newsletter() {
       {/* Newsletter */}
       <div className="mt-6 flex">
         <input
-          type="email"
-          name="email"
-          id="email"
+          type="text"
+          id="EMAIL"
+          name="EMAIL"
+          autocomplete="off"
+          data-required="true"
           placeholder="Email"
           value={email}
           required
@@ -154,17 +155,19 @@ function Newsletter() {
         </Button>
         <input
           type="checkbox"
-          name="gdpr"
-          id="gdpr"
-          placeholder="Concordo em receber os e-mails"
-          defaultValue="Concordo em receber os e-mails"
-          required
+          class="input_replaced"
+          defaultValue="1"
           defaultChecked
+          id="OPT_IN"
+          name="OPT_IN"
           style={{ position: "absolute", left: "-50000px" }}
           tabIndex={-1}
         />
+
         <div style={{ position: "absolute", left: "-50000px" }} aria-hidden="true">
-          <input type="text" name="b_QXuEYKn" tabIndex={-1} defaultValue="" />
+          <input type="text" name="email_address_check" defaultValue="" class="input--hidden" />
+          <input type="hidden" name="locale" defaultValue="pt" />
+          <input type="hidden" name="html_type" defaultValue="simple" />
         </div>
       </div>
     </form>
