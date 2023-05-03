@@ -1,0 +1,77 @@
+import { Video, Link, ArticleLayout } from '@src/components/content'
+
+export const meta = {
+  author: 'Mario Souto',
+  date: '2023-05-03',
+  title: '#drops Quem tem medo do this? Function vs Arrow Functions no JavaScript',
+  description: '???',
+  source: 'devsoutinho',
+  category: 'post',
+  tags: ['threads', 'javascript', 'programação'],
+  comments: true,
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+Você sabe uma das principais diferenças de usar function vs arrow function no seu código?
+
+Olhando esse código? quais são os valores de `this` em ordem do counter?
+
+```js
+let counter = 0;
+console.log(++counter, "[solto] this", this);
+
+function MyFunction() {
+	console.log(++counter, "[function] this", this);
+}
+MyFunction();
+new MyFunction();
+
+const MyArrowFunction = () => {
+	console.log(++counter, "[arrow_function] this", this);
+}
+MyArrowFunction();
+
+const myCustomObject = {
+	MyFunction,
+	MyArrowFunction,
+};
+myCustomObject.MyFunction();
+myCustomObject.MyArrowFunction();
+```
+
+1. O primeiro console log `"[solto] this"`, vai referenciar o window, se você estiver rodando na web e o global se você estiver no Node. Importante reforçar que hoje em dia, também temos o globalThis que permite que seu código acesse o escopo global independente do ambiente em que ele esteja rodando.
+
+https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/globalThis
+
+2. O segundo é o this dentro de uma function. Por padrão o this dentro de uma function vai referenciar **o escopo de onde ela está sendo executada**, neste caso, ela vai ser executada no escopo global, por consequencia é o mesmo this do item anterior.
+
+3. No terceiro caso, estamos usando nossa função para instanciar um novo objeto. Dito isso, o objeto em questão vai ser o this da nossa instância nessa função. Ou seja, o this vai ser o objeto que estamos instanciando.
+
+4. No quarto caso, estamos usando uma arrow function. A arrow function não tem um this próprio, **ela vai herdar o this do escopo onde ela está sendo criada**. Neste caso, o escopo é o global, então o this vai ser o mesmo do primeiro caso.
+
+5. Neste caso, estamos criando um novo objeto e adicionando nossa função criada com `function` nele. O resultado da execução vai ser o mesmo do segundo caso, pois o this vai ser o mesmo do escopo onde a função está sendo executada, que é o nosso objeto literal `myCustomObject`.
+
+6. No sexto caso, estamos criando um novo objeto e adicionando nossa função criada com `arrow function` dentro dele. O resultado da execução vai ser o mesmo do primeiro caso, pois o this vai ser o mesmo do escopo onde a função está sendo criada, que é o objeto global do browser.
+
+> Ahh e antes que você pergunte, tentar usar new em uma arrow function irá resultar em `Uncaught TypeError: MyArrowFunction is not a constructor`
+
+<iframe
+  height="300"
+  width="100%"
+  scrolling="no"
+  title="Exemplo de código"
+  src="https://codepen.io/omariosouto/embed/XWxzKdO?default-tab=js%2Cresult&editable=true"
+  frameBorder="no"
+  loading="lazy"
+  allowtransparency={true.toString()}
+  allowFullScreen={true}
+/>
+
+E como sempre, fica aqui as referências para você se aprofundar no assunto:
+
+- [this - MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Operators/this)
+- [arrow function - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+- [function - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
+
+Continue acompanhando o blog para mais dicas de desenvolvimento em geral! 😍
