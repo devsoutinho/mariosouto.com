@@ -29,6 +29,7 @@ export function ArticleLayout({
   previousPathname,
 }) {
   let router = useRouter()
+  const slug = router?.pathname.split("/").at(-1);
   
   if (isRssFeed) return children
 
@@ -72,7 +73,7 @@ export function ArticleLayout({
           </div>
         </div>
 
-        {meta.comments && (<Comments slug={meta.slug} />)}
+        {meta.comments && (<Comments slug={meta.slug || slug} />)}
       </Container>
     </>
   )

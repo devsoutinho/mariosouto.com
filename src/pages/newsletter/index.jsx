@@ -34,7 +34,7 @@ export default function NewsletterSuccess() {
             type="text"
             id="EMAIL"
             name="EMAIL"
-            autocomplete="off"
+            autoComplete="off"
             data-required="true"
             placeholder="Email"
             value={email}
@@ -49,7 +49,7 @@ export default function NewsletterSuccess() {
 
           <input
             type="checkbox"
-            class="input_replaced"
+            className="input_replaced"
             defaultValue="1"
             defaultChecked
             id="OPT_IN"
@@ -59,7 +59,7 @@ export default function NewsletterSuccess() {
           />
 
           <div style={{ position: "absolute", left: "-50000px" }} aria-hidden="true">
-            <input type="text" name="email_address_check" defaultValue="" class="input--hidden" />
+            <input type="text" name="email_address_check" defaultValue="" className="input--hidden" />
             <input type="hidden" name="locale" defaultValue="pt" />
             <input type="hidden" name="html_type" defaultValue="simple" />
           </div>
