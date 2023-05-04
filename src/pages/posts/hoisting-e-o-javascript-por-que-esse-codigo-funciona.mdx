@@ -1,0 +1,88 @@
+import { Video, Link, ArticleLayout } from '@src/components/content'
+
+export const meta = {
+  author: 'Mario Souto',
+  date: '2023-05-04',
+  title: '#drops Hoisting no JavaScript e como ele funciona com funções e variáveis',
+  description: 'Você sabe o que é hoisting no JavaScript? Sabe como ele funciona? Neste post eu vou te explicar como ele funciona e como você pode deixar seus códigos mais bonitos tirando vantagem dele.',
+  source: 'devsoutinho',
+  category: 'post',
+  tags: ['threads', 'javascript', 'programação'],
+  comments: true,
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+Você sabe me explicar por que no código abaixo eu consigo chamar as funções antes de declará-las?
+
+```js
+export function Card({ title }) {
+  return (
+    <div>
+      <CardHeader title={title} />
+      <CardBody />
+    </div>
+  );
+}
+
+function CardBody({ children }) {
+  return (
+    <div>
+      {children}
+    </div>
+  )
+}
+
+const CardTitle = ({ children }) => <h1>{children}</h1>;
+
+function CardHeader({ title, children }) {
+  return (
+    <div>
+      <CardTitle>
+        {title}
+      </CardTitle>
+      {children}
+    </div>
+  )
+}
+```
+
+Ontem eu falei sobre uma das [principais diferenças de usar arrow function vs function](https://mariosouto.com/posts/quem-tem-medo-do-this-function-vs-arrow-function/)
+e hoje eu vou falar sobre outra diferença entre elas, o hoisting.
+
+1. Quando eu declarei o component Card, eu chamo as funções CardHeader e CardBody antes de declará-las. Isso funciona porque o JavaScript iça as funções para o topo do escopo.
+
+2. O que quer dizer "içar para o topo do escopo"? Quer dizer que o JavaScript vai mover a declaração da função para o topo do arquivo. No caso do nosso exemplo, o escopo é o arquivo inteiro.
+
+3. "Ahh mas isso ai é má prática". Então ao invés de levar programação como dógma, eu gosto de olhar caso a caso. Em um cenário de criação de componentes acho saudável fazer dessa forma, inclusive para quem trabalha com Flutter isso acaba sendo bastante comum.
+
+4. Outro caso legal é ter um arquivo que também tem um export principal e várias funções auxiliares, assim quem abrir o arquivo já vai da de cara com o principal ponto trabalhado ali. E em pequenas funções você pode deixar o código mais legível.
+
+5. Posso fazer o mesmo com variáveis? Com variáveis acontece algo diferente, usando `var` a declaração é içada, mas a atribuição de valor não, isso pode levar nosso código a alguns bugs, não a toa no ES2015 foi adicionado let e const.
+
+6. Let e Const tem um comportamento mais saudável, chamdo de temporal deadzone, que basicamente não iça a declaração e estoura um erro se você tentar usar a variável antes de declará-la.
+
+<iframe
+  height="300"
+  width="100%"
+  scrolling="no"
+  title="Exemplo de código"
+  src="https://codepen.io/omariosouto/embed/wvYPjoY?default-tab=js%2Cresult&editable=true"
+  frameBorder="no"
+  loading="lazy"
+  allowtransparency={true.toString()}
+  allowFullScreen={true}
+/>
+
+> TLDR; Toda vez que você declarar uma função no JavaScript, ela vai ser içada para o topo do escopo. Isso quer dizer que você pode chamar a função antes de declará-la.
+
+E como sempre, fica aqui as referências para você se aprofundar no assunto:
+
+- [Hoisting - MDN](https://developer.mozilla.org/pt-BR/docs/Glossary/Hoisting)
+- [Temporal Deadzone - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#temporal_dead_zone_tdz)
+
+Continue acompanhando o blog para mais dicas de desenvolvimento em geral! 😍
+
+Ahh e me segue no YouTube!
+
+https://www.youtube.com/@DevSoutinho
