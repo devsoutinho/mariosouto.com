@@ -1,0 +1,51 @@
+import { Video, Link, ArticleLayout } from '@src/components/content'
+
+export const meta = {
+  author: 'Mario Souto',
+  date: '2023-05-07',
+  title: 'Windows sem NPX, o que fazer?',
+  description: 'Se você sofreu com o erro "cannot be loaded because running scripts is disabled" esse post é para você!',
+  source: 'devsoutinho',
+  category: 'post',
+  tags: ['threads', 'javascript', 'devtips', 'contenteditable'],
+  comments: true,
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+Quando você instala o NodeJS em um sistema windows, o comando `npx` não vem disponível por padrão. E ao tentar executar algum script de um tutorial você pode receber o erro
+
+```bash
+gitignore : File C:\Users\username\AppData\Roaming\npm\gitignore.ps1 cannot be loaded because running scripts is disabled
+on this system. For more information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
+At line:1 char:1
++ gitignore node
++ ~~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+```
+
+> Esse erro ocorreu ao executar `npx gitignore node`
+
+Se você estiver fazendo meu curso [Construindo CRUDs com Qualidade](https://crudcomqualidade.io/indicacao/devsoutinho), ou somente tentando desenvolver com JavaScript e você estiver usando Windows. Aqui vão algumas dicas importantes:
+
+1. Após instalar o NodeJS na sua máquina, abra o PowerShell e execute o comando abaixo:
+```bash
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
+```
+
+2. Após isso, instale o `npx` globalmente via o comando `npm`:
+```bash
+npm i -g npx
+```
+
+3. Após isso, você poderá executar comandos via NPX em sua máquina como: 
+```bash
+npx gitignore node
+```
+> Esse comando irá criar um arquivo `.gitignore` com as configurações para projetos NodeJS
+
+Curtiu? Me segue ai e acompanha para mais dicas de desenvolvimento em geral! 😍
+
+- Blog: https://mariosouto.com
+- YouTube: https://youtube.com/@DevSoutinho
