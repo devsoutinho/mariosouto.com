@@ -24,7 +24,7 @@ export const projects = [
   createPost({
     title: "CRUDs com qualidade com JavaScript",
     url: "https://crudcomqualidade.io/indicacao/devsoutinho",
-    image: "https://crudcomqualidade.io/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Flogo-white.cbfd979d.png&w=2048&q=75",
+    image: "/images/courses/crudcomqualidade.png",
     date: "2022-09-20",
     description: "Vem comigo, fazer o projeto base que faltava para tirar todas as suas dúvidas sobre os pilares da construção de softwares, entender os porquês de cada coisa e desmistificar as siglas e os nominhos por trás de qualidade de software.",
     source: "Cursos",
