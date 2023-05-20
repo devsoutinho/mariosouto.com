@@ -1,5 +1,5 @@
 ---
-date: "20230520"
+date: "2023-05-20"
 registered: true
 source: devsoutinho
 type: post
