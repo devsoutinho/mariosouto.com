@@ -3,8 +3,10 @@ import glob from 'fast-glob'
 import { PUBLIC_SITE_URL } from "data";
 
 function addPage(page) {
-  const path = page.replace('src/pages', '').replace('.js', '').replace('.mdx', '')
-  const route = path === '/index' ? '' : path
+  const path = page.replace('src/pages', '').replace('.js', '').replace('.mdx', '').replace('.md', '')
+  let route = path === '/index' ? '' : path;
+  if(!route.startsWith("/")) route = `/${route}`;
+
   return `  <url>
     <loc>${`${PUBLIC_SITE_URL}${route}`}</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
@@ -16,6 +18,7 @@ function addPage(page) {
 export async function generateSitemap() {
   // excludes Nextjs files and API routes.
   const pages = await glob([
+    'posts/**/*.md',
     'src/pages/**/*{.js,.mdx}',
     '!src/pages/_*.js',
     '!src/pages/api',

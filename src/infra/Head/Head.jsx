@@ -20,9 +20,10 @@ const output = image !== undefined
 return output;
 }
 
-export const Head = withRouter(function Head({ router, title, ogTitle, description, image, children }) {
-  const routePath = router.route === "/" ? "" : router.route;
+export const Head = withRouter(function Head({ imageRoutePath, router, title, ogTitle, description, image, children }) {
+  const routePath = imageRoutePath || (router.route === "/" ? "" : router.route);
   const url = "https://mariosouto.com" + routePath;
+
   const ogImage = buildOgImageUrl({
     title,
     ogTitle,

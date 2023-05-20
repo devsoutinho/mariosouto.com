@@ -29,7 +29,6 @@ export default async function handler(req, res) {
   }).slice(0, videosToSync);
 
   videosToCreate.forEach(video => {
-    console.log("date", );
     const date = new Date(video.date);
     const postDate = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart("2", "0")}-${(date.getDate()).toString().padStart("2", "0")}`;
     const template = `
@@ -61,7 +60,6 @@ Link para assistir direto e compartilhar: https://youtu.be/${getYoutubeId(video.
 
 ---
     `;
-    console.log('video', video);
     const fileName = slugify(video.title);
     fs.writeFileSync(`./src/pages/posts/${fileName}.mdx`, template.trim());
   });

@@ -29,7 +29,7 @@ export function ArticleLayout({
   previousPathname,
 }) {
   let router = useRouter()
-  const slug = router?.pathname.split("/").at(-1);
+  const slug = meta.slug || router?.pathname.split("/").at(-1);
   
   if (isRssFeed) return children
 
@@ -40,6 +40,7 @@ export function ArticleLayout({
         title={`${meta.title} - ${config.owner}`}
         description={meta.description}
         image={meta.image}
+        imageRoutePath={`/posts/${slug}/`}
       />
 
       <Container className="mt-16 lg:mt-32">
