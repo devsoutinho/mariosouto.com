@@ -10,10 +10,11 @@ public_folder: /images/uploads
 
 publish_mode: editorial_workflow # Isso permite ter aquele workflow com drafts e tudo
 
-slug:
+slug-slug:
   encoding: 'ascii'
   clean_accents: true
-date:
+
+date-slug:
   format: YYYY-MM-DD
   output_format: YYYYMMDD
 
@@ -22,7 +23,7 @@ collections:
     label: posts 
     folder: posts # A pasta onde ficarão os posts
     create: true # Permite criar um post novo
-    slug: '{{date}}-{{slug}}' # Estrutura do nome arquivo, exemplo: title.md
+    slug: '{{date-slug}}-{{slug-slug}}' # Estrutura do nome arquivo, exemplo: title.md
     fields: # Os campos do seu frontmatter
       - {
           label: 'Date',
