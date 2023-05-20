@@ -15,10 +15,11 @@ slug:
   clean_accents: true
 
 collections:
-  - name: posts 
-    label: posts 
+  - name: "posts" 
+    label: "Posts" 
     folder: posts # A pasta onde ficarão os posts
     create: true # Permite criar um post novo
+    summary: "[{{date | date('YYYY-MM-DD')}}] - {{fields.title}}" # O que vai aparecer na lista de posts
     slug: '{{year}}{{month}}{{day}}-{{slug}}' # Estrutura do nome arquivo, exemplo: title.md
     fields: # Os campos do seu frontmatter
       - {
