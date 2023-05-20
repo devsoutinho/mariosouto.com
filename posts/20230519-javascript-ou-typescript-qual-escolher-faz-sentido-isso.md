@@ -1,8 +1,8 @@
 ---
 registered: false
+source: devsoutinho
 type: post
 title: JavaScript ou TypeScript? Qual Escolher? Faz sentido discutir isso?
-source: devsoutinho
 category: post
 description: >-
   No vídeo de hoje, discutimos a relevância da discussão entre JavaScript e TypeScript no atual ecossistema de programação web.
