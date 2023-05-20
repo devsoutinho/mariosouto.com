@@ -30,9 +30,9 @@ export async function getAllArticles() {
 async function importPosts(postFilename) {
   const filePath = path.join(process.cwd(), 'posts', postFilename);
   const fileContent = await fs.readFile(filePath, 'utf8');
-  const { data: { registered, ...meta}, content } = matter(fileContent);
+  const { data: { registered, date, ...meta}, content } = matter(fileContent);
 
-  const date = Array
+  const fileDate = Array
     .from(postFilename.substring(0, 8))
     .reduce((acc, curr, index) => {
       if (index === 4 || index === 6) {
@@ -40,11 +40,12 @@ async function importPosts(postFilename) {
       }
       return acc + curr;
     }, '');
+
   const slug = postFilename.substring(9, postFilename.length - 3);
 
   return {
     registered,
-    date,
+    date: fileDate,
     slug,
     author: 'Mario Souto',
     comments: true,
