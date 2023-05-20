@@ -6,9 +6,7 @@ function addPage(page) {
   const path = page.replace('src/pages', '').replace('.js', '').replace('.mdx', '').replace('.md', '')
   let route = path === '/index' ? '' : path;
   if(!route.startsWith("/")) route = `/${route}`;
-  
 
-  console.log("route", route);
   return `  <url>
     <loc>${`${PUBLIC_SITE_URL}${route}`}</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
