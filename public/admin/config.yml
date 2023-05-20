@@ -1,6 +1,6 @@
 backend:
   name: github
-  POST IMAGE: main
+  branch: main
   repo: devsoutinho/mariosouto.com
   base_url: https://mariosouto.com/
   auth_endpoint: api/auth/ # Essa rota vai ser muito importante mais para frente
