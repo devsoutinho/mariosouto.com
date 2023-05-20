@@ -33,4 +33,5 @@ collections:
       - { label: 'Category', name: "category", widget: "select", options: ["post", "podcast", "event", "video"] }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Tags', name: 'tags', widget: 'list',   default: ["javascript"] }
       - { label: 'Body', name: 'body', widget: 'markdown' }
