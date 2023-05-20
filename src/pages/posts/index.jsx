@@ -3,7 +3,7 @@ import { SimpleLayout } from '@src/components/SimpleLayout'
 import config from "@src/config"
 import { Head } from "@src/infra/Head/Head"
 import { formatDate } from '@src/lib/formatDate'
-import { getAllArticles } from '@src/lib/getAllContent'
+import { getAllArticles, getAllMarkdownPosts } from '@src/lib/getAllContent'
 
 function Article({ article }) {
   return (
@@ -64,7 +64,7 @@ export default function ArticlesIndex({ articles }) {
 export async function getStaticProps() {
   return {
     props: {
-      articles: (await getAllArticles()).map(({ component, ...meta }) => meta),
+      articles: [...(await getAllMarkdownPosts()), ...(await getAllArticles())].map(({ component, content, ...meta }) => meta),
     },
   }
 }

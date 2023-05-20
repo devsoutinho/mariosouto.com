@@ -28,7 +28,7 @@ import image5 from '@src/images/photos/image-5.jpg'
 import { formatDate } from '@src/lib/formatDate'
 import { generateRssFeed } from '@src/lib/generateRssFeed'
 import { generateSitemap } from "@src/lib/generateSitemap";
-import { getAllArticles } from '@src/lib/getAllContent'
+import { getAllArticles, getAllMarkdownPosts } from '@src/lib/getAllContent'
 import { NavLink } from "@src/components/Footer";
 import { Head } from "@src/infra/Head/Head";
 
@@ -366,10 +366,11 @@ export async function getStaticProps() {
   await generateRssFeed();
   // }
 
+  const articles = [...await getAllMarkdownPosts(), ...await getAllArticles()].map(({ component, content, ...meta }) => meta);
+
   return {
     props: {
-      articles: (await getAllArticles())
-        .map(({ component, ...meta }) => meta),
+      articles,
     },
   }
 }

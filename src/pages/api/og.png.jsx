@@ -27,7 +27,6 @@ export default async function handler(req) {
   
   try {
     const image = atob(req.nextUrl.searchParams.get("bg") || "");
-    console.log("image", image);
     const output = atob(req.nextUrl.searchParams.get("params") || "").split("%%%%");
     const baseTitle = output[0] || "";
     const basePath = output[1] || "";
