@@ -67,6 +67,7 @@ export function RenderPost({ content }) {
 function Link({ children, ...props }) {
   const href = props.href;
   const isPureLink = children[0].startsWith('http');
+  const isInternalLink = href.startsWith('/');
   if (isPureLink && href.includes('www.youtube.com')) {
     const youtubeId = getYoutubeId(href);
     return (
@@ -79,5 +80,13 @@ function Link({ children, ...props }) {
       />
     )
   }
-  return <a {...props}>{children}</a>
+  return (
+    <a
+      {...props}
+      target={!isInternalLink && '_blank'}
+      rel={isInternalLink ? '' : 'noopener noreferrer'}
+    >
+      {children}
+    </a>
+  );
 }
