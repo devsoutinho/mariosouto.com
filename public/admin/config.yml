@@ -18,17 +18,19 @@ collections:
     label: posts 
     folder: posts # A pasta onde ficarão os posts
     create: true # Permite criar um post novo
-    slug: '{{slug}}' # Estrutura do nome arquivo, exemplo: title.md
+    slug: '20230519-{{slug}}' # Estrutura do nome arquivo, exemplo: title.md
     fields: # Os campos do seu frontmatter
-      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' }
+      - { label: 'Registered?', name: 'registered', widget: 'boolean', default: false }
+      - { label: 'Type', name: 'type', widget: 'hidden', default: 'post' }
       - {
           label: 'Date',
           name: 'date',
           widget: 'datetime',
           format: 'YYYY-MM-DD hh:mm:ss'
         }
-      - { label: 'Post Image', name: 'image', widget: 'image', required: false }
       - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Source', name: 'source', widget: 'hidden', default: 'devsoutinho' }
+      - { label: 'Post Image', name: 'image', widget: 'image', required: false }
       - { label: 'Description', name: 'description', widget: 'string' }
 
       - { label: 'Body', name: 'body', widget: 'markdown' }
