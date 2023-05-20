@@ -1,4 +1,5 @@
 ---
+registered: false
 type: post
 title: Título do Post
 source: devsoutinho
