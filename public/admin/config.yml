@@ -13,6 +13,9 @@ publish_mode: editorial_workflow # Isso permite ter aquele workflow com drafts e
 slug:
   encoding: 'ascii'
   clean_accents: true
+date:
+  format: YYYY-MM-DD
+  output_format: YYYYMMDD
 
 collections:
   - name: posts 
@@ -25,7 +28,7 @@ collections:
           label: 'Date',
           name: 'date',
           widget: 'datetime',
-          format: 'YYYYMMDD'
+          format: 'YYYY-MM-DD hh:mm:ss',
         }
       - { label: 'Registered?', name: 'registered', widget: 'boolean', default: false }
       - { label: 'Source', name: 'source', widget: 'hidden', default: 'devsoutinho' }
