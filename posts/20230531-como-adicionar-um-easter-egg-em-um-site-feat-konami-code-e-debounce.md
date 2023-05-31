@@ -20,3 +20,5 @@ INFELIZMENTE hoje em dia é raro achar algum site que tenha um segredo nessa peg
 Conteudo, eu achei super legal trazer aqui a possibilidade de vocês implementarem em seus próprios sites de forma super fácil e usando JavaScript!. No vídeo, eu ensino passo a passo como criar o código e como fazer para que ele funcione no seu site. Além disso, também mostro o debounce pattern, que é super útil e pode ser usado em vários projetos diferentes.
 
 Por hoje  é isso, pessoal, espero que gostem do vídeo e que ele seja útil para vocês. Não esqueça de deixar seu comentário e se inscrever no canal para não perder os próximos vídeos. Um abraço e até a próxima!
+
+<https://youtu.be/6KS4t97yMlI>
