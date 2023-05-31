@@ -68,7 +68,7 @@ function Link({ children, ...props }) {
   const href = props.href;
   const isPureLink = children[0].startsWith('http');
   const isInternalLink = href.startsWith('/');
-  if (isPureLink && href.includes('www.youtube.com')) {
+  if (isPureLink && (href.includes('www.youtube.com') || href.includes('youtu.be'))) {
     const youtubeId = getYoutubeId(href);
     return (
       <iframe
