@@ -1,6 +1,6 @@
 ---
 date: 2023-05-20
-registered: false
+registered: true
 source: devsoutinho
 type: post
 category: post
