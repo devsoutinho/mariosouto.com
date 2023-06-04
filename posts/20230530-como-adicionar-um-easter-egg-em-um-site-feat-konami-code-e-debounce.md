@@ -1,6 +1,6 @@
 ---
 date: 2023-05-30 09:54:15
-registered: false
+registered: true
 source: devsoutinho
 type: post
 category: video
